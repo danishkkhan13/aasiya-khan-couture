@@ -18,17 +18,19 @@ import {
   X,
   Crown,
   Heart,
-  ShieldCheck,
-  Truck,
   Scissors,
+  Truck,
+  Gem,
 } from "lucide-react";
 
+// Client's Exact Real Brand Details
+const BRAND_NAME = "ak Creation's";
 const DESIGNER_NAME = "Aasiya Khan";
-const BRAND_TAGLINE = "HAUTE COUTURE & BRIDAL ATELIER";
-// Replace with the client's actual WhatsApp number (country code + number, e.g. 919876543210)
-const WHATSAPP_NUMBER = "919876543210";
-const ATELIER_LOCATION = "Mumbai • Delhi • Dubai (By Appointment Only)";
-const ATELIER_EMAIL = "aasiyakhan.couture@gmail.com";
+const DESIGNER_TITLE = "Fashion Designer • Fashion Freelancer";
+const BRAND_TAGLINE = "Designing attire beyond bodies";
+const PHONE_NUMBER = "9619094687";
+const WHATSAPP_NUMBER = "919619094687";
+const EMAIL_ADDRESS = "Akcreationsdesigner@gmail.com";
 
 function InstagramIcon({ className = "w-5 h-5" }: { className?: string }) {
   return (
@@ -48,6 +50,22 @@ function InstagramIcon({ className = "w-5 h-5" }: { className?: string }) {
   );
 }
 
+function FacebookIcon({ className = "w-5 h-5" }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+    </svg>
+  );
+}
+
 // Curated Women's Luxury Haute Couture Collection
 const COLLECTIONS = [
   {
@@ -55,17 +73,17 @@ const COLLECTIONS = [
     title: "Gul-e-Noor Crimson Bridal Lehenga",
     category: "Bridal Couture",
     craft: "Antique dabka, handcrafted zardozi & micro pearls on pure raw silk",
-    price: "Price on Request",
+    price: "Bespoke Bridal",
     image:
       "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1000&q=80",
     tag: "Masterpiece",
   },
   {
     id: 2,
-    title: "Mehtab Ivory & Champagne Trousseau",
+    title: "Mehtab Ivory & Gold Trousseau",
     category: "Bridal Couture",
     craft: "Mulberry silk with gold cutdana and double-drape scalloped organza dupatta",
-    price: "Bespoke Made-to-Order",
+    price: "Made to Order",
     image:
       "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=1000&q=80",
     tag: "Signature Bridal",
@@ -85,16 +103,16 @@ const COLLECTIONS = [
     title: "Mumtaz Handwoven Banarasi Brocade",
     category: "Festive & Shararas",
     craft: "Vintage Mughal floral jaal with handcrafted kardana borders",
-    price: "Price on Request",
+    price: "Heirloom Edition",
     image:
       "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=1000&q=80",
-    tag: "Heirloom Edition",
+    tag: "Festive Luxe",
   },
   {
     id: 5,
-    title: "Aura Rose Gold Sculpted Gown",
+    title: "Aura Midnight Sapphire Reception Gown",
     category: "Reception Gowns",
-    craft: "Corseted bodice embellished with Swarovski crystals & French tulle flare",
+    craft: "Structured corset bodice with crystals & French silk drape flare",
     price: "Bespoke Fitting",
     image:
       "https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=1000&q=80",
@@ -115,7 +133,7 @@ const COLLECTIONS = [
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success">("idle");
 
   const filteredCollections =
     selectedCategory === "All"
@@ -126,7 +144,7 @@ export default function Home() {
     const text = customText
       ? encodeURIComponent(customText)
       : encodeURIComponent(
-          `Hello Aasiya Khan Atelier, I would like to inquire about your women's bespoke bridal and couture designs.`
+          `Hello Aasiya Khan (${BRAND_NAME}), I would like to inquire about your custom fashion design & bridal couture services.`
         );
     return `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
   }
@@ -137,7 +155,7 @@ export default function Home() {
 
     const formData = new FormData(e.currentTarget);
     formData.append("access_key", "YOUR_FREE_WEB3FORMS_KEY");
-    formData.append("subject", `New Bridal Inquiry for ${DESIGNER_NAME}`);
+    formData.append("subject", `New Inquiry for ${BRAND_NAME} by ${DESIGNER_NAME}`);
 
     try {
       await fetch("https://api.web3forms.com/submit", {
@@ -152,71 +170,83 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] text-[#1E1B18]">
+    <div className="min-h-screen bg-[#FAF8F5] text-[#111A29]">
       
-      {/* 1. TOP ANNOUNCEMENT BAR */}
+      {/* 1. TOP ANNOUNCEMENT BANNER */}
       <aside
         aria-label="Announcement"
-        className="bg-[#1C1A18] text-[#E8D7B8] text-[11px] uppercase tracking-[0.25em] py-2.5 px-4 text-center font-medium"
+        className="bg-[#0F1E36] text-[#E5D2AF] text-[11px] uppercase tracking-[0.25em] py-2.5 px-4 text-center font-medium"
       >
-        <span>Women&apos;s Bespoke Bridal Season Open &bull; Worldwide Shipping &bull; Private Atelier Fittings</span>
+        <span>{BRAND_NAME} &bull; {BRAND_TAGLINE} &bull; Private Consultations Open</span>
         <a
           href={getWhatsAppLink()}
           target="_blank"
           rel="noopener noreferrer"
-          className="ml-3 underline text-[#E8D7B8] hover:text-white transition inline-flex items-center gap-1 font-semibold"
+          className="ml-3 underline text-white hover:text-[#C5A059] transition inline-flex items-center gap-1 font-semibold"
         >
-          Book on WhatsApp <ArrowRight className="w-3 h-3" />
+          WhatsApp: +91 {PHONE_NUMBER} <ArrowRight className="w-3 h-3" />
         </a>
       </aside>
 
       {/* 2. LUXURY BOUTIQUE HEADER */}
-      <header className="sticky top-0 z-40 bg-[#FAF8F5]/95 backdrop-blur-md border-b border-[#EAE3D6] shadow-sm">
+      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-[#E5DFD5] shadow-xs">
         <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
           
-          {/* Brand Logo */}
-          <a href="#" className="flex flex-col items-start group">
-            <span className="font-editorial text-2xl md:text-3xl tracking-[0.25em] font-semibold text-[#1A1816] group-hover:text-[#9E7D3B] transition">
-              {DESIGNER_NAME.toUpperCase()}
-            </span>
-            <span className="text-[9px] tracking-[0.4em] text-[#8C7A5E] font-medium uppercase">
-              {BRAND_TAGLINE}
-            </span>
+          {/* Logo Matching the Bag Branding */}
+          <a href="#" className="flex items-center gap-3 group">
+            <div className="w-12 h-12 rounded-full border-2 border-[#0F1E36] flex items-center justify-center font-editorial text-xl font-bold text-[#0F1E36] bg-[#F7F4EE] group-hover:border-[#C5A059] transition">
+              ak
+            </div>
+            <div className="flex flex-col">
+              <span className="font-editorial text-2xl md:text-3xl font-semibold tracking-wider text-[#0F1E36] leading-none">
+                {BRAND_NAME}
+              </span>
+              <span className="text-[11px] text-[#C5A059] font-medium tracking-wide mt-1">
+                by {DESIGNER_NAME}
+              </span>
+            </div>
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center space-x-8 text-xs tracking-[0.2em] uppercase font-medium text-[#4A443C]">
-            <a href="#collections" className="hover:text-[#9E7D3B] transition">
+          <nav className="hidden md:flex items-center space-x-8 text-xs tracking-[0.2em] uppercase font-semibold text-[#3B4554]">
+            <a href="#collections" className="hover:text-[#0F1E36] transition">
               Collections
             </a>
-            <a href="#about" className="hover:text-[#9E7D3B] transition">
-              The Designer
+            <a href="#about" className="hover:text-[#0F1E36] transition">
+              About Aasiya
             </a>
-            <a href="#services" className="hover:text-[#9E7D3B] transition">
-              Women&apos;s Couture
+            <a href="#branding" className="hover:text-[#0F1E36] transition">
+              Boutique Studio
             </a>
-            <a href="#contact" className="hover:text-[#9E7D3B] transition">
-              Bespoke Fitting
+            <a href="#contact" className="hover:text-[#0F1E36] transition">
+              Book Appointment
             </a>
           </nav>
 
-          {/* WhatsApp Direct Header Button */}
-          <div className="hidden md:flex items-center space-x-4">
+          {/* Direct WhatsApp Call-to-Action */}
+          <div className="hidden md:flex items-center space-x-3">
+            <a
+              href={`tel:+${WHATSAPP_NUMBER}`}
+              className="p-2.5 rounded-full border border-[#D0D6DF] text-[#0F1E36] hover:bg-[#F0F4F8] transition"
+              title="Call Studio"
+            >
+              <Phone className="w-4 h-4" />
+            </a>
             <a
               href={getWhatsAppLink()}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#1F8246] hover:bg-[#186a38] text-white transition duration-300 text-xs tracking-[0.15em] uppercase font-medium shadow-sm"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#1F8246] hover:bg-[#186a38] text-white transition duration-300 text-xs tracking-[0.15em] uppercase font-semibold shadow-sm"
             >
               <MessageCircle className="w-4 h-4 fill-current" />
-              WhatsApp Atelier
+              Chat on WhatsApp
             </a>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden text-[#1A1816] p-2"
+            className="md:hidden text-[#0F1E36] p-2"
             aria-label="Toggle Navigation Menu"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -225,152 +255,235 @@ export default function Home() {
 
         {/* Mobile Dropdown */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-[#FAF8F5] border-b border-[#EAE3D6] px-6 py-6 space-y-4">
-            <nav className="flex flex-col space-y-3 text-xs tracking-[0.2em] uppercase text-[#4A443C] font-medium">
+          <div className="md:hidden bg-white border-b border-[#E5DFD5] px-6 py-6 space-y-4 shadow-xl">
+            <nav className="flex flex-col space-y-3 text-xs tracking-[0.2em] uppercase text-[#3B4554] font-semibold">
               <a
                 href="#collections"
                 onClick={() => setMobileMenuOpen(false)}
-                className="hover:text-[#9E7D3B] py-1"
+                className="hover:text-[#0F1E36] py-1"
               >
                 Collections
               </a>
               <a
                 href="#about"
                 onClick={() => setMobileMenuOpen(false)}
-                className="hover:text-[#9E7D3B] py-1"
+                className="hover:text-[#0F1E36] py-1"
               >
-                The Designer
+                About Aasiya
               </a>
               <a
-                href="#services"
+                href="#branding"
                 onClick={() => setMobileMenuOpen(false)}
-                className="hover:text-[#9E7D3B] py-1"
+                className="hover:text-[#0F1E36] py-1"
               >
-                Women&apos;s Couture
+                Boutique Studio
               </a>
               <a
                 href="#contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="hover:text-[#9E7D3B] py-1"
+                className="hover:text-[#0F1E36] py-1"
               >
-                Bespoke Fitting
+                Book Appointment
               </a>
             </nav>
             <a
               href={getWhatsAppLink()}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full flex items-center justify-center gap-2 py-3 rounded-full bg-[#1F8246] text-white text-xs font-semibold uppercase tracking-widest"
+              className="w-full flex items-center justify-center gap-2 py-3.5 rounded-full bg-[#1F8246] text-white text-xs font-semibold uppercase tracking-widest shadow-md"
             >
               <MessageCircle className="w-4 h-4 fill-current" />
-              Chat on WhatsApp
+              Chat on WhatsApp ({PHONE_NUMBER})
             </a>
           </div>
         )}
       </header>
 
-      {/* 3. HERO EDITORIAL SHOWCASE */}
-      <section className="relative bg-[#F3EEE6] border-b border-[#E8DFCFC] py-20 md:py-28 px-6 overflow-hidden">
+      {/* 3. HERO SHOWCASE (ROYAL MIDNIGHT BLUE THEME MATCHING BAG & SALON) */}
+      <section className="relative bg-[#0F1E36] text-white py-20 md:py-28 px-6 overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#D5C5A8] bg-[#FAF8F5] text-[#9E7D3B] text-[11px] tracking-[0.3em] uppercase font-semibold">
-              <Crown className="w-3.5 h-3.5" />
-              Women&apos;s Haute Couture &amp; Bridal Studio
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#C5A059]/40 bg-[#C5A059]/10 text-[#E5D2AF] text-[11px] tracking-[0.3em] uppercase font-semibold">
+              <Crown className="w-3.5 h-3.5 text-[#C5A059]" />
+              {DESIGNER_TITLE}
             </div>
 
-            <h1 className="font-editorial text-4xl sm:text-6xl md:text-7xl font-light tracking-tight text-[#1A1816] leading-[1.1]">
-              Heirloom Bridal Ensembles for the{" "}
-              <span className="italic text-[#9E7D3B] font-normal">
-                Modern Royal Bride
-              </span>
+            <h1 className="font-editorial text-4xl sm:text-6xl md:text-7xl font-light tracking-tight text-white leading-[1.1]">
+              &ldquo;{BRAND_TAGLINE}&rdquo;
             </h1>
 
-            <p className="max-w-xl text-sm sm:text-base text-[#61584D] font-light leading-relaxed">
-              Hand-embroidered zardozi, antique tilla, and molten silk creations curated
-              with precision by couturier <strong className="font-medium text-[#1A1816]">{DESIGNER_NAME}</strong>.
-              Crafted exclusively for women who demand unmatched haute couture luxury.
+            <p className="max-w-xl text-sm sm:text-base text-[#B0BCCB] font-light leading-relaxed">
+              Welcome to <strong className="font-semibold text-white">{BRAND_NAME}</strong> by{" "}
+              <strong className="font-semibold text-[#E5D2AF]">{DESIGNER_NAME}</strong>. Bespoke bridal lehengas,
+              royal shararas, couture gowns, and luxury pret tailored to perfection for the contemporary woman.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
               <a
-                href="#collections"
-                className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#1A1816] hover:bg-[#332F2B] text-white font-semibold text-xs tracking-[0.2em] uppercase transition shadow-md"
-              >
-                Explore Bridal Collection
-              </a>
-              <a
-                href={getWhatsAppLink("Hello Aasiya Khan, I would like to book a private bridal consultation.")}
+                href={getWhatsAppLink("Hello Aasiya, I would like to book a bespoke bridal consultation.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#1F8246] hover:bg-[#186a38] text-white font-semibold text-xs tracking-[0.15em] uppercase transition shadow-md inline-flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#1F8246] hover:bg-[#186a38] text-white font-semibold text-xs tracking-[0.15em] uppercase transition shadow-lg inline-flex items-center justify-center gap-2"
               >
                 <MessageCircle className="w-4 h-4 fill-current" />
-                WhatsApp Consultation
+                WhatsApp Consultation (+91 {PHONE_NUMBER})
+              </a>
+              <a
+                href="#collections"
+                className="w-full sm:w-auto px-8 py-4 rounded-full border border-[#C5A059] hover:bg-[#C5A059] hover:text-[#0F1E36] text-[#E5D2AF] font-semibold text-xs tracking-[0.2em] uppercase transition"
+              >
+                View Lookbook
               </a>
             </div>
 
-            {/* Value Indicators */}
-            <div className="pt-8 grid grid-cols-3 gap-6 border-t border-[#DFD5C4] text-left">
+            {/* Quick Badges */}
+            <div className="pt-8 grid grid-cols-3 gap-6 border-t border-white/10 text-left">
               <div>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-[#8C7A5E]">Karigari</p>
-                <p className="font-editorial text-lg text-[#1A1816]">100% Handcrafted</p>
+                <p className="text-[10px] uppercase tracking-[0.2em] text-[#C5A059]">Karigari</p>
+                <p className="font-editorial text-lg text-white">Handcrafted Zardozi</p>
               </div>
               <div>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-[#8C7A5E]">Fitting</p>
-                <p className="font-editorial text-lg text-[#1A1816]">Made-to-Measure</p>
+                <p className="text-[10px] uppercase tracking-[0.2em] text-[#C5A059]">Fitting</p>
+                <p className="font-editorial text-lg text-white">Made-to-Measure</p>
               </div>
               <div>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-[#8C7A5E]">Delivery</p>
-                <p className="font-editorial text-lg text-[#1A1816]">Worldwide Courier</p>
+                <p className="text-[10px] uppercase tracking-[0.2em] text-[#C5A059]">Freelance</p>
+                <p className="font-editorial text-lg text-white">Custom Styling</p>
               </div>
             </div>
           </div>
 
-          {/* Hero Visual Card */}
+          {/* Real Boutique Branding Photo Display */}
           <div className="lg:col-span-5 relative">
-            <div className="aspect-[3/4] rounded-2xl overflow-hidden border border-[#D5C5A8] shadow-2xl bg-white">
+            <div className="aspect-[4/5] rounded-3xl overflow-hidden border-2 border-[#C5A059]/40 shadow-2xl bg-[#091322]">
               <img
-                src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1200&q=85"
-                alt="Aasiya Khan Bridal Masterpiece"
+                src="/ak-bag-logo.jpg"
+                alt="ak Creation's by Aasiya Khan"
                 className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
               />
             </div>
-            <div className="absolute -bottom-6 -left-6 bg-white border border-[#E0D7C9] p-5 rounded-2xl shadow-xl max-w-xs hidden sm:block">
-              <div className="flex items-center gap-2 text-[#9E7D3B]">
-                <Sparkles className="w-4 h-4" />
-                <span className="text-[10px] uppercase tracking-[0.2em] font-semibold">Bespoke Bridal</span>
-              </div>
-              <p className="font-editorial text-xl text-[#1A1816] mt-1">Gul-e-Noor Velvet Lehenga</p>
-              <p className="text-[11px] text-[#7A6F62] mt-0.5">Over 200 hours of zardozi artisanship</p>
+            <div className="absolute -bottom-6 -left-6 bg-white text-[#0F1E36] p-5 rounded-2xl shadow-2xl max-w-xs border border-[#E5DFD5] hidden sm:block">
+              <span className="text-[10px] uppercase tracking-[0.2em] text-[#C5A059] font-bold">
+                Official Atelier
+              </span>
+              <p className="font-editorial text-xl font-semibold mt-0.5">{BRAND_NAME}</p>
+              <p className="text-xs text-[#5A6578]">Bespoke Fashion &amp; Bridal Studio</p>
             </div>
           </div>
 
         </div>
       </section>
 
-      {/* 4. THE COUTURE COLLECTION LOOKBOOK (FATIMA BOUTIQUE & MANISH MALHOTRA STYLE) */}
+      {/* 4. THE REAL BRAND IDENTITY & CONTACT DISPLAY */}
+      <section id="branding" className="py-20 px-6 max-w-7xl mx-auto border-b border-[#E5DFD5]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          
+          <div className="aspect-[4/5] rounded-3xl overflow-hidden border border-[#D2DAE5] shadow-xl bg-white max-w-md mx-auto">
+            <img
+              src="/ak-bag-contact.jpg"
+              alt="Aasiya Khan Contact & Details"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          <div className="space-y-6">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0F1E36]/5 text-[#0F1E36] text-[11px] tracking-[0.25em] uppercase font-bold">
+              <Scissors className="w-3.5 h-3.5" />
+              Direct Studio Access
+            </div>
+
+            <h2 className="font-editorial text-3xl md:text-5xl font-light text-[#0F1E36]">
+              {DESIGNER_NAME}
+            </h2>
+            <p className="text-sm font-semibold text-[#C5A059] uppercase tracking-widest">
+              {DESIGNER_TITLE}
+            </p>
+
+            <p className="text-sm text-[#4E596B] leading-relaxed">
+              Every garment created under <strong>{BRAND_NAME}</strong> is customized to honor your individuality.
+              Whether you need a royal wedding trousseau, a celebrity-inspired reception gown, or bespoke freelance design consulting, we bring your vision to life.
+            </p>
+
+            <div className="space-y-3 pt-2">
+              <div className="flex items-center gap-3 p-4 rounded-xl bg-white border border-[#E5DFD5] shadow-xs">
+                <div className="w-10 h-10 rounded-full bg-[#1F8246]/10 text-[#1F8246] flex items-center justify-center shrink-0">
+                  <Phone className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-[10px] uppercase tracking-wider text-[#7A8799]">Direct Phone / WhatsApp</p>
+                  <a
+                    href={getWhatsAppLink()}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-base font-bold text-[#0F1E36] hover:text-[#1F8246] transition"
+                  >
+                    +91 {PHONE_NUMBER}
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3 p-4 rounded-xl bg-white border border-[#E5DFD5] shadow-xs">
+                <div className="w-10 h-10 rounded-full bg-[#0F1E36]/10 text-[#0F1E36] flex items-center justify-center shrink-0">
+                  <Mail className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-[10px] uppercase tracking-wider text-[#7A8799]">Official Email</p>
+                  <a
+                    href={`mailto:${EMAIL_ADDRESS}`}
+                    className="text-base font-semibold text-[#0F1E36] hover:text-[#C5A059] transition"
+                  >
+                    {EMAIL_ADDRESS}
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-2 flex items-center gap-3">
+              <a
+                href={getWhatsAppLink()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 rounded-full bg-[#1F8246] hover:bg-[#186a38] text-white font-semibold text-xs tracking-wider uppercase transition shadow-sm inline-flex items-center gap-2"
+              >
+                <MessageCircle className="w-4 h-4 fill-current" />
+                Inquire on WhatsApp
+              </a>
+              <a
+                href={`tel:+${WHATSAPP_NUMBER}`}
+                className="px-6 py-3 rounded-full border border-[#0F1E36] hover:bg-[#0F1E36] hover:text-white text-[#0F1E36] font-semibold text-xs tracking-wider uppercase transition"
+              >
+                Call Now
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* 5. WOMEN'S LOOKBOOK & COLLECTIONS */}
       <section id="collections" className="py-24 px-6 max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-[#E8DFCFC] pb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-[#E5DFD5] pb-8">
           <div>
-            <span className="text-[11px] uppercase tracking-[0.3em] text-[#9E7D3B] block mb-2 font-semibold">
-              Curated Masterpieces
+            <span className="text-[11px] uppercase tracking-[0.3em] text-[#C5A059] block mb-2 font-semibold">
+              Curated Lookbook
             </span>
-            <h2 className="font-editorial text-3xl md:text-5xl font-light text-[#1A1816]">
-              Women&apos;s Haute Couture
+            <h2 className="font-editorial text-3xl md:text-5xl font-light text-[#0F1E36]">
+              Haute Couture Ensembles
             </h2>
           </div>
 
-          {/* Filter Pills */}
+          {/* Filter Tabs */}
           <div className="flex items-center gap-2 mt-6 md:mt-0 overflow-x-auto pb-2 md:pb-0">
             {["All", "Bridal Couture", "Festive & Shararas", "Reception Gowns", "Luxury Pret"].map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-5 py-2 rounded-full text-xs uppercase tracking-[0.15em] transition duration-200 whitespace-nowrap ${
+                className={`px-5 py-2.5 rounded-full text-xs uppercase tracking-[0.15em] transition duration-200 whitespace-nowrap ${
                   selectedCategory === cat
-                    ? "bg-[#1A1816] text-white font-semibold shadow-sm"
-                    : "bg-white border border-[#DFD5C4] text-[#61584D] hover:border-[#1A1816] hover:text-[#1A1816]"
+                    ? "bg-[#0F1E36] text-white font-semibold shadow-md"
+                    : "bg-white border border-[#D2DAE5] text-[#4E596B] hover:border-[#0F1E36] hover:text-[#0F1E36]"
                 }`}
               >
                 {cat}
@@ -379,45 +492,43 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Lookbook Cards Grid */}
+        {/* Collection Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredCollections.map((item) => (
             <div
               key={item.id}
-              className="group bg-white border border-[#EAE3D6] rounded-2xl overflow-hidden hover:border-[#9E7D3B] hover:shadow-xl transition duration-500 flex flex-col justify-between"
+              className="group bg-white border border-[#E5DFD5] rounded-3xl overflow-hidden hover:border-[#C5A059] hover:shadow-xl transition duration-500 flex flex-col justify-between"
             >
-              {/* Product Image */}
-              <div className="relative aspect-[3/4] overflow-hidden bg-[#F3EEE6]">
+              <div className="relative aspect-[3/4] overflow-hidden bg-[#F0F4F8]">
                 <img
                   src={item.image}
                   alt={item.title}
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
-                <span className="absolute top-4 left-4 bg-white/90 backdrop-blur-md border border-[#EAE3D6] text-[#9E7D3B] text-[10px] tracking-[0.2em] uppercase px-3 py-1 rounded-full font-semibold">
+                <span className="absolute top-4 left-4 bg-white/95 backdrop-blur-md border border-[#E5DFD5] text-[#0F1E36] text-[10px] tracking-[0.2em] uppercase px-3 py-1 rounded-full font-bold">
                   {item.tag}
                 </span>
               </div>
 
-              {/* Product Details */}
               <div className="p-6 space-y-4 flex-1 flex flex-col justify-between">
                 <div>
-                  <span className="text-[10px] uppercase tracking-[0.2em] text-[#8C7A5E] font-medium">
+                  <span className="text-[10px] uppercase tracking-[0.2em] text-[#C5A059] font-bold">
                     {item.category}
                   </span>
-                  <h3 className="font-editorial text-2xl text-[#1A1816] group-hover:text-[#9E7D3B] transition mt-1">
+                  <h3 className="font-editorial text-2xl text-[#0F1E36] group-hover:text-[#C5A059] transition mt-1">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-[#7A6F62] font-light mt-1.5 leading-relaxed">
+                  <p className="text-xs text-[#616E82] font-light mt-1.5 leading-relaxed">
                     {item.craft}
                   </p>
-                  <p className="text-xs font-semibold text-[#9E7D3B] mt-2 uppercase tracking-wider">
+                  <p className="text-xs font-semibold text-[#0F1E36] mt-2 uppercase tracking-wider">
                     {item.price}
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-[#F0EAE1]">
+                <div className="pt-4 border-t border-[#F2EDE4]">
                   <a
-                    href={getWhatsAppLink(`Hi Aasiya Khan Atelier, I want to order/inquire about: ${item.title}`)}
+                    href={getWhatsAppLink(`Hi Aasiya (${BRAND_NAME}), I would like to order or customize: ${item.title}`)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full py-3 rounded-full bg-[#1F8246] hover:bg-[#186a38] text-white text-xs font-semibold uppercase tracking-wider transition inline-flex items-center justify-center gap-2 shadow-sm"
@@ -432,96 +543,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. ABOUT THE DESIGNER */}
-      <section id="about" className="py-24 bg-[#F5F0E8] border-y border-[#EAE3D6] px-6">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          
-          <div className="space-y-6">
-            <span className="text-[11px] uppercase tracking-[0.3em] text-[#9E7D3B] font-semibold">
-              The Atelier &amp; Designer
-            </span>
-            <h2 className="font-editorial text-3xl md:text-5xl font-light text-[#1A1816] leading-tight">
-              Aasiya Khan
-            </h2>
-            <p className="text-sm text-[#61584D] font-light leading-relaxed">
-              Dedicated exclusively to women&apos;s haute couture, <strong className="text-[#1A1816] font-medium">{DESIGNER_NAME}</strong> blends centuries-old Mughal embroidery techniques with cutting-edge runway drapes.
-            </p>
-            <p className="text-sm text-[#61584D] font-light leading-relaxed">
-              Every garment is created as a collectible heirloom. From customized bridal color swatches to personalized karigari consultations, Aasiya personally oversees every stage of fabrication.
-            </p>
-
-            <div className="space-y-4 pt-2">
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-white border border-[#D5C5A8] flex items-center justify-center text-[#9E7D3B] shrink-0">
-                  <Scissors className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="text-sm font-semibold text-[#1A1816] uppercase tracking-wider">
-                    Customized Made-to-Measure
-                  </h4>
-                  <p className="text-xs text-[#7A6F62] mt-0.5">
-                    Every piece is individually cut and tailored to your specific measurements for a flawless silhouette.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-white border border-[#D5C5A8] flex items-center justify-center text-[#9E7D3B] shrink-0">
-                  <Truck className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="text-sm font-semibold text-[#1A1816] uppercase tracking-wider">
-                    Global Express Delivery
-                  </h4>
-                  <p className="text-xs text-[#7A6F62] mt-0.5">
-                    Safely delivered with custom luxury bridal packaging across India, UAE, UK, USA, and Canada.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="pt-4">
-              <a
-                href={getWhatsAppLink("Hello Aasiya Khan, I would like to schedule a private fitting appointment.")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#1A1816] hover:bg-[#332F2B] text-white text-xs uppercase tracking-widest font-semibold transition shadow-md"
-              >
-                Schedule Private Fitting <ArrowRight className="w-4 h-4" />
-              </a>
-            </div>
-          </div>
-
-          <div className="relative">
-            <div className="aspect-[4/5] rounded-3xl overflow-hidden border border-[#D5C5A8] shadow-2xl bg-white">
-              <img
-                src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=1200&q=80"
-                alt="Aasiya Khan Atelier Artisanship"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="absolute -bottom-6 -left-6 bg-white border border-[#E0D7C9] p-6 rounded-2xl shadow-xl max-w-xs">
-              <p className="text-[10px] tracking-[0.2em] uppercase text-[#9E7D3B] font-semibold">Bridal Studio</p>
-              <p className="font-editorial text-2xl text-[#1A1816] mt-1">500+ Brides Dressed</p>
-              <p className="text-[11px] text-[#7A6F62] mt-1">Celebrating heritage craft across the globe</p>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* 6. SOCIAL CHANNELS & VIP CONCIERGE */}
-      <section id="social" className="py-20 px-6 max-w-6xl mx-auto">
+      {/* 6. SOCIAL MEDIA & CHANNELS */}
+      <section className="py-20 px-6 max-w-6xl mx-auto">
         <div className="text-center space-y-3 mb-12">
-          <span className="text-[11px] uppercase tracking-[0.3em] text-[#9E7D3B] font-semibold">
-            Connect Directly
+          <span className="text-[11px] uppercase tracking-[0.3em] text-[#C5A059] font-semibold">
+            Follow Our Designs
           </span>
-          <h2 className="font-editorial text-3xl md:text-4xl text-[#1A1816]">
-            Social Channels &amp; VIP Concierge
+          <h2 className="font-editorial text-3xl md:text-4xl text-[#0F1E36]">
+            Social Channels &amp; Studio Desk
           </h2>
-          <p className="text-xs text-[#7A6F62] tracking-wider uppercase">
-            Follow our latest runway shows and backstage fittings
-          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -530,18 +560,18 @@ export default function Home() {
             href={getWhatsAppLink()}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-6 rounded-2xl bg-white border border-[#EAE3D6] hover:border-[#1F8246] hover:shadow-lg transition group flex flex-col justify-between space-y-6"
+            className="p-6 rounded-2xl bg-white border border-[#E5DFD5] hover:border-[#1F8246] hover:shadow-lg transition group flex flex-col justify-between space-y-6"
           >
             <div className="flex items-center justify-between">
               <div className="w-10 h-10 rounded-full bg-[#1F8246]/10 text-[#1F8246] flex items-center justify-center">
                 <MessageCircle className="w-5 h-5 fill-current" />
               </div>
-              <ExternalLink className="w-4 h-4 text-[#8C7A5E] group-hover:text-[#1F8246] transition" />
+              <ExternalLink className="w-4 h-4 text-[#8C98A8] group-hover:text-[#1F8246] transition" />
             </div>
             <div>
-              <p className="text-[10px] uppercase tracking-[0.2em] text-[#8C7A5E] font-medium">Instant Concierge</p>
-              <h4 className="font-editorial text-xl text-[#1A1816] mt-1">WhatsApp Chat</h4>
-              <p className="text-xs text-[#7A6F62] mt-1">Direct replies for brides and custom orders.</p>
+              <p className="text-[10px] uppercase tracking-[0.2em] text-[#8C98A8] font-medium">WhatsApp</p>
+              <h4 className="font-editorial text-xl text-[#0F1E36] mt-1">+91 {PHONE_NUMBER}</h4>
+              <p className="text-xs text-[#616E82] mt-1">Instant chat for brides &amp; fittings.</p>
             </div>
           </a>
 
@@ -549,90 +579,92 @@ export default function Home() {
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-6 rounded-2xl bg-white border border-[#EAE3D6] hover:border-[#E1306C] hover:shadow-lg transition group flex flex-col justify-between space-y-6"
+            className="p-6 rounded-2xl bg-white border border-[#E5DFD5] hover:border-[#E1306C] hover:shadow-lg transition group flex flex-col justify-between space-y-6"
           >
             <div className="flex items-center justify-between">
               <div className="w-10 h-10 rounded-full bg-[#E1306C]/10 text-[#E1306C] flex items-center justify-center">
                 <InstagramIcon className="w-5 h-5" />
               </div>
-              <ExternalLink className="w-4 h-4 text-[#8C7A5E] group-hover:text-[#E1306C] transition" />
+              <ExternalLink className="w-4 h-4 text-[#8C98A8] group-hover:text-[#E1306C] transition" />
             </div>
             <div>
-              <p className="text-[10px] uppercase tracking-[0.2em] text-[#8C7A5E] font-medium">Runway &amp; Reels</p>
-              <h4 className="font-editorial text-xl text-[#1A1816] mt-1">Instagram</h4>
-              <p className="text-xs text-[#7A6F62] mt-1">@aasiyakhan.couture — Real brides &amp; fittings.</p>
+              <p className="text-[10px] uppercase tracking-[0.2em] text-[#8C98A8] font-medium">Instagram</p>
+              <h4 className="font-editorial text-xl text-[#0F1E36] mt-1">@Akcreationsdesigner</h4>
+              <p className="text-xs text-[#616E82] mt-1">Latest fashion drops and bridal trials.</p>
             </div>
           </a>
 
           <a
-            href={`tel:+${WHATSAPP_NUMBER}`}
-            className="p-6 rounded-2xl bg-white border border-[#EAE3D6] hover:border-[#1A1816] hover:shadow-lg transition group flex flex-col justify-between space-y-6"
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-6 rounded-2xl bg-white border border-[#E5DFD5] hover:border-[#1877F2] hover:shadow-lg transition group flex flex-col justify-between space-y-6"
           >
             <div className="flex items-center justify-between">
-              <div className="w-10 h-10 rounded-full bg-[#9E7D3B]/10 text-[#9E7D3B] flex items-center justify-center">
-                <Phone className="w-5 h-5" />
+              <div className="w-10 h-10 rounded-full bg-[#1877F2]/10 text-[#1877F2] flex items-center justify-center">
+                <FacebookIcon className="w-5 h-5" />
               </div>
-              <ExternalLink className="w-4 h-4 text-[#8C7A5E] group-hover:text-[#1A1816] transition" />
+              <ExternalLink className="w-4 h-4 text-[#8C98A8] group-hover:text-[#1877F2] transition" />
             </div>
             <div>
-              <p className="text-[10px] uppercase tracking-[0.2em] text-[#8C7A5E] font-medium">Studio Desk</p>
-              <h4 className="font-editorial text-xl text-[#1A1816] mt-1">Direct Call</h4>
-              <p className="text-xs text-[#7A6F62] mt-1">Mon &ndash; Sat: 11:00 AM &ndash; 8:00 PM IST</p>
+              <p className="text-[10px] uppercase tracking-[0.2em] text-[#8C98A8] font-medium">Facebook</p>
+              <h4 className="font-editorial text-xl text-[#0F1E36] mt-1">ak Creation&apos;s</h4>
+              <p className="text-xs text-[#616E82] mt-1">Customer stories &amp; collection showcase.</p>
             </div>
           </a>
 
           <a
-            href={`mailto:${ATELIER_EMAIL}`}
-            className="p-6 rounded-2xl bg-white border border-[#EAE3D6] hover:border-[#1A1816] hover:shadow-lg transition group flex flex-col justify-between space-y-6"
+            href={`mailto:${EMAIL_ADDRESS}`}
+            className="p-6 rounded-2xl bg-white border border-[#E5DFD5] hover:border-[#0F1E36] hover:shadow-lg transition group flex flex-col justify-between space-y-6"
           >
             <div className="flex items-center justify-between">
-              <div className="w-10 h-10 rounded-full bg-[#9E7D3B]/10 text-[#9E7D3B] flex items-center justify-center">
+              <div className="w-10 h-10 rounded-full bg-[#0F1E36]/10 text-[#0F1E36] flex items-center justify-center">
                 <Mail className="w-5 h-5" />
               </div>
-              <ExternalLink className="w-4 h-4 text-[#8C7A5E] group-hover:text-[#1A1816] transition" />
+              <ExternalLink className="w-4 h-4 text-[#8C98A8] group-hover:text-[#0F1E36] transition" />
             </div>
             <div>
-              <p className="text-[10px] uppercase tracking-[0.2em] text-[#8C7A5E] font-medium">Official Desk</p>
-              <h4 className="font-editorial text-xl text-[#1A1816] mt-1">Concierge Email</h4>
-              <p className="text-xs text-[#7A6F62] mt-1">{ATELIER_EMAIL}</p>
+              <p className="text-[10px] uppercase tracking-[0.2em] text-[#8C98A8] font-medium">Email Desk</p>
+              <h4 className="font-editorial text-lg text-[#0F1E36] mt-1 truncate">{EMAIL_ADDRESS}</h4>
+              <p className="text-xs text-[#616E82] mt-1">Official design inquiries &amp; collaborations.</p>
             </div>
           </a>
 
         </div>
       </section>
 
-      {/* 7. BESPOKE BRIDAL APPOINTMENT FORM */}
-      <section id="contact" className="py-24 px-6 bg-[#F3EEE6] border-t border-[#EAE3D6]">
+      {/* 7. CONTACT & BESPOKE APPOINTMENT FORM */}
+      <section id="contact" className="py-24 px-6 bg-[#F0F4F8] border-t border-[#D9E1EB]">
         <div className="max-w-4xl mx-auto">
           
           <div className="text-center space-y-3 mb-12">
-            <span className="text-[11px] uppercase tracking-[0.3em] text-[#9E7D3B] font-semibold">
-              Private Fitting &amp; Consultation
+            <span className="text-[11px] uppercase tracking-[0.3em] text-[#C5A059] font-bold">
+              Private Fitting Appointment
             </span>
-            <h2 className="font-editorial text-3xl md:text-5xl font-light text-[#1A1816]">
-              Book Your Bridal Appointment
+            <h2 className="font-editorial text-3xl md:text-5xl font-light text-[#0F1E36]">
+              Book with {DESIGNER_NAME}
             </h2>
-            <p className="text-xs text-[#7A6F62] tracking-wider uppercase">
-              Schedule your fitting or consultation for custom bridal &amp; festive wear
+            <p className="text-xs text-[#5A6578] tracking-wider uppercase">
+              Schedule your bridal fitting or customized fashion design inquiry
             </p>
           </div>
 
-          <div className="bg-white border border-[#D5C5A8] rounded-3xl p-8 sm:p-12 shadow-xl">
+          <div className="bg-white border border-[#D0D9E5] rounded-3xl p-8 sm:p-12 shadow-xl">
             {formStatus === "success" ? (
               <div className="text-center py-12 space-y-4">
                 <div className="w-16 h-16 mx-auto rounded-full bg-[#1F8246]/10 border border-[#1F8246] text-[#1F8246] flex items-center justify-center">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
-                <h3 className="font-editorial text-3xl text-[#1A1816]">Appointment Request Received</h3>
-                <p className="text-sm text-[#61584D] max-w-md mx-auto">
-                  Thank you for writing to {DESIGNER_NAME} Atelier. Our senior bridal stylist will connect with you on WhatsApp within 24 hours.
+                <h3 className="font-editorial text-3xl text-[#0F1E36]">Appointment Request Received</h3>
+                <p className="text-sm text-[#5A6578] max-w-md mx-auto">
+                  Thank you for reaching out to {BRAND_NAME}. Aasiya Khan will contact you directly on WhatsApp (+91 {PHONE_NUMBER}) within 24 hours.
                 </p>
                 <div className="pt-4">
                   <button
                     onClick={() => setFormStatus("idle")}
-                    className="px-6 py-2.5 rounded-full border border-[#1A1816] text-[#1A1816] text-xs uppercase tracking-widest hover:bg-[#1A1816] hover:text-white transition"
+                    className="px-6 py-2.5 rounded-full border border-[#0F1E36] text-[#0F1E36] text-xs uppercase tracking-widest hover:bg-[#0F1E36] hover:text-white transition"
                   >
-                    Submit Another Inquiry
+                    Send Another Inquiry
                   </button>
                 </div>
               </div>
@@ -641,7 +673,7 @@ export default function Home() {
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-[11px] uppercase tracking-[0.2em] text-[#61584D] mb-2 font-semibold">
+                    <label className="block text-[11px] uppercase tracking-[0.2em] text-[#4E596B] mb-2 font-semibold">
                       Your Full Name *
                     </label>
                     <input
@@ -649,12 +681,12 @@ export default function Home() {
                       name="name"
                       required
                       placeholder="e.g. Fatima Shaikh"
-                      className="w-full bg-[#FAF8F5] border border-[#D5C5A8] rounded-xl px-4 py-3 text-sm text-[#1A1816] placeholder:text-[#A69989] focus:outline-none focus:border-[#9E7D3B] transition"
+                      className="w-full bg-[#FAF8F5] border border-[#D0D9E5] rounded-xl px-4 py-3 text-sm text-[#0F1E36] focus:outline-none focus:border-[#0F1E36] transition"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-[11px] uppercase tracking-[0.2em] text-[#61584D] mb-2 font-semibold">
+                    <label className="block text-[11px] uppercase tracking-[0.2em] text-[#4E596B] mb-2 font-semibold">
                       WhatsApp / Phone Number *
                     </label>
                     <input
@@ -662,14 +694,14 @@ export default function Home() {
                       name="phone"
                       required
                       placeholder="e.g. +91 98765 43210"
-                      className="w-full bg-[#FAF8F5] border border-[#D5C5A8] rounded-xl px-4 py-3 text-sm text-[#1A1816] placeholder:text-[#A69989] focus:outline-none focus:border-[#9E7D3B] transition"
+                      className="w-full bg-[#FAF8F5] border border-[#D0D9E5] rounded-xl px-4 py-3 text-sm text-[#0F1E36] focus:outline-none focus:border-[#0F1E36] transition"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-[11px] uppercase tracking-[0.2em] text-[#61584D] mb-2 font-semibold">
+                    <label className="block text-[11px] uppercase tracking-[0.2em] text-[#4E596B] mb-2 font-semibold">
                       Email Address *
                     </label>
                     <input
@@ -677,75 +709,75 @@ export default function Home() {
                       name="email"
                       required
                       placeholder="you@example.com"
-                      className="w-full bg-[#FAF8F5] border border-[#D5C5A8] rounded-xl px-4 py-3 text-sm text-[#1A1816] placeholder:text-[#A69989] focus:outline-none focus:border-[#9E7D3B] transition"
+                      className="w-full bg-[#FAF8F5] border border-[#D0D9E5] rounded-xl px-4 py-3 text-sm text-[#0F1E36] focus:outline-none focus:border-[#0F1E36] transition"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-[11px] uppercase tracking-[0.2em] text-[#61584D] mb-2 font-semibold">
-                      Wedding / Occasion Date
+                    <label className="block text-[11px] uppercase tracking-[0.2em] text-[#4E596B] mb-2 font-semibold">
+                      Occasion / Event Date
                     </label>
                     <input
                       type="text"
                       name="event_date"
-                      placeholder="e.g. December 2026"
-                      className="w-full bg-[#FAF8F5] border border-[#D5C5A8] rounded-xl px-4 py-3 text-sm text-[#1A1816] placeholder:text-[#A69989] focus:outline-none focus:border-[#9E7D3B] transition"
+                      placeholder="e.g. Wedding Dec 2026"
+                      className="w-full bg-[#FAF8F5] border border-[#D0D9E5] rounded-xl px-4 py-3 text-sm text-[#0F1E36] focus:outline-none focus:border-[#0F1E36] transition"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-[11px] uppercase tracking-[0.2em] text-[#61584D] mb-2 font-semibold">
-                    Select Outfit Type
+                  <label className="block text-[11px] uppercase tracking-[0.2em] text-[#4E596B] mb-2 font-semibold">
+                    Category of Interest
                   </label>
                   <select
                     name="category_interest"
-                    className="w-full bg-[#FAF8F5] border border-[#D5C5A8] rounded-xl px-4 py-3 text-sm text-[#1A1816] focus:outline-none focus:border-[#9E7D3B] transition"
+                    className="w-full bg-[#FAF8F5] border border-[#D0D9E5] rounded-xl px-4 py-3 text-sm text-[#0F1E36] focus:outline-none focus:border-[#0F1E36] transition"
                   >
-                    <option value="Bridal Lehenga">Bridal Lehenga (Royal Heirloom)</option>
-                    <option value="Festive Sharara / Gharara">Festive Sharara / Farshi Gharara</option>
-                    <option value="Reception / Cocktail Gown">Reception Gown / Draped Silhouette</option>
-                    <option value="Sangeet / Mehendi Outfit">Sangeet / Mehendi Outfit</option>
-                    <option value="Custom Bespoke Order">Custom Bespoke Design</option>
+                    <option value="Bridal Lehenga">Bridal Lehenga</option>
+                    <option value="Festive Sharara / Farshi">Festive Sharara / Farshi Gharara</option>
+                    <option value="Reception / Party Gown">Reception / Party Gown</option>
+                    <option value="Freelance Design Project">Fashion Freelancing / Custom Styling</option>
+                    <option value="Other Bespoke">Other Custom Bespoke</option>
                   </select>
                 </div>
 
                 <div>
-                  <label className="block text-[11px] uppercase tracking-[0.2em] text-[#61584D] mb-2 font-semibold">
-                    Customization Details / Vision
+                  <label className="block text-[11px] uppercase tracking-[0.2em] text-[#4E596B] mb-2 font-semibold">
+                    Message / Customization Details
                   </label>
                   <textarea
                     name="message"
                     rows={4}
                     required
-                    placeholder="Share your color palette, preferred fabrics, or special design notes..."
-                    className="w-full bg-[#FAF8F5] border border-[#D5C5A8] rounded-xl px-4 py-3 text-sm text-[#1A1816] placeholder:text-[#A69989] focus:outline-none focus:border-[#9E7D3B] transition"
+                    placeholder="Tell Aasiya about your preferred fabric, colors, or design requirements..."
+                    className="w-full bg-[#FAF8F5] border border-[#D0D9E5] rounded-xl px-4 py-3 text-sm text-[#0F1E36] focus:outline-none focus:border-[#0F1E36] transition"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={formStatus === "submitting"}
-                  className="w-full py-4 rounded-full bg-[#1A1816] hover:bg-[#332F2B] text-white text-xs font-semibold uppercase tracking-[0.25em] transition duration-300 disabled:opacity-50 flex items-center justify-center gap-2 shadow-md"
+                  className="w-full py-4 rounded-full bg-[#0F1E36] hover:bg-[#1A2E4F] text-white text-xs font-semibold uppercase tracking-[0.25em] transition duration-300 disabled:opacity-50 flex items-center justify-center gap-2 shadow-lg"
                 >
                   {formStatus === "submitting" ? (
                     "Sending Request..."
                   ) : (
                     <>
-                      <Send className="w-3.5 h-3.5" /> Book Bespoke Consultation
+                      <Send className="w-3.5 h-3.5" /> Book Consultation with Aasiya Khan
                     </>
                   )}
                 </button>
 
-                <p className="text-center text-[11px] text-[#7A6F62] pt-2">
-                  Need quick instant assistance?{" "}
+                <p className="text-center text-[11px] text-[#7A8799] pt-2">
+                  Prefer direct instant chat?{" "}
                   <a
-                    href={getWhatsAppLink("Hi Aasiya Khan Atelier, I need quick assistance regarding an outfit.")}
+                    href={getWhatsAppLink("Hi Aasiya, I want to inquire directly regarding a design.")}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#1F8246] underline font-semibold"
+                    className="text-[#1F8246] underline font-bold"
                   >
-                    Direct Chat on WhatsApp
+                    Click to WhatsApp (+91 {PHONE_NUMBER})
                   </a>
                 </p>
               </form>
@@ -755,41 +787,43 @@ export default function Home() {
       </section>
 
       {/* 8. FOOTER */}
-      <footer className="border-t border-[#EAE3D6] bg-white py-16 px-6 text-[#7A6F62]">
+      <footer className="border-t border-[#D0D9E5] bg-[#0F1E36] text-[#B0BCCB] py-16 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
           
           <div className="text-center md:text-left space-y-1">
-            <span className="font-editorial text-2xl tracking-[0.2em] text-[#1A1816] font-semibold">
-              {DESIGNER_NAME.toUpperCase()}
+            <span className="font-editorial text-2xl tracking-[0.2em] text-white font-semibold">
+              {BRAND_NAME.toUpperCase()}
             </span>
-            <p className="text-[10px] uppercase tracking-[0.3em] text-[#9E7D3B] font-semibold">
-              WOMEN&apos;S HAUTE COUTURE &amp; BRIDAL ATELIER
+            <p className="text-[10px] uppercase tracking-[0.3em] text-[#C5A059] font-bold">
+              {DESIGNER_NAME} &bull; {DESIGNER_TITLE}
             </p>
-            <p className="text-xs text-[#8C7A5E] pt-1">{ATELIER_LOCATION}</p>
+            <p className="text-xs text-[#8A9AB0] pt-1">
+              Call / WhatsApp: +91 {PHONE_NUMBER} &bull; {EMAIL_ADDRESS}
+            </p>
           </div>
 
-          <div className="flex items-center gap-6 text-xs uppercase tracking-[0.2em] text-[#4A443C] font-medium">
-            <a href="#collections" className="hover:text-[#9E7D3B] transition">
+          <div className="flex items-center gap-6 text-xs uppercase tracking-[0.2em] text-[#C5A059] font-semibold">
+            <a href="#collections" className="hover:text-white transition">
               Collections
             </a>
-            <a href="#about" className="hover:text-[#9E7D3B] transition">
+            <a href="#about" className="hover:text-white transition">
               About
             </a>
-            <a href="#contact" className="hover:text-[#9E7D3B] transition">
+            <a href="#contact" className="hover:text-white transition">
               Appointments
             </a>
             <a
               href={getWhatsAppLink()}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#1F8246] font-semibold hover:underline"
+              className="text-[#25D366] hover:underline"
             >
               WhatsApp
             </a>
           </div>
 
-          <p className="text-[11px] text-[#A69989] text-center md:text-right">
-            &copy; {new Date().getFullYear()} {DESIGNER_NAME} Haute Couture. All rights reserved.
+          <p className="text-[11px] text-[#7A8A9E] text-center md:text-right">
+            &copy; {new Date().getFullYear()} {BRAND_NAME} by {DESIGNER_NAME}. All rights reserved.
           </p>
         </div>
       </footer>
@@ -804,7 +838,7 @@ export default function Home() {
       >
         <MessageCircle className="w-5 h-5 fill-current" />
         <span className="text-xs font-semibold tracking-wide pr-1 hidden sm:inline-block">
-          WhatsApp Concierge
+          WhatsApp: {PHONE_NUMBER}
         </span>
       </a>
 

@@ -8,7 +8,7 @@
 body {
   font-family: var(--font-sans);
   background-color: #FAF8F5;
-  color: #1A1816;
+  color: #111A29;
   overflow-x: hidden;
 }
 
@@ -16,16 +16,12 @@ body {
   font-family: var(--font-serif);
 }
 
-.gold-accent {
-  color: #9E7D3B;
+.royal-navy {
+  background-color: #0F1E36;
 }
 
-.gold-bg {
-  background: linear-gradient(135deg, #C5A059 0%, #B38B3F 100%);
-}
-
-.gold-bg:hover {
-  background: linear-gradient(135deg, #D4AF67 0%, #C5A059 100%);
+.royal-gold {
+  color: #C5A059;
 }
 
 ::-webkit-scrollbar {
@@ -35,9 +31,9 @@ body {
   background: #FAF8F5;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D9D2C7;
+  background: #C8D1DC;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #B38B3F;
+  background: #0F1E36;
 }
