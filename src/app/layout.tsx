@@ -10,22 +10,23 @@ const serifFont = Cormorant_Garamond({
 
 const sansFont = Montserrat({
   subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600"],
+  weight: ["200", "300", "400", "500", "600", "700"],
   variable: "--font-montserrat",
 });
 
 export const metadata: Metadata = {
-  title: "Aasiya Khan Haute Couture | Luxury Bridal & Designer Wear",
+  title: "Aasiya Khan Haute Couture | Luxury Women's Bridal Atelier",
   description:
-    "Exquisite handcrafted bridal couture, royal lehengas, luxury pret, and bespoke festive ensembles by celebrity fashion designer Aasiya Khan.",
+    "Exquisite handcrafted bridal lehengas, royal festive shararas, luxury pret, and bespoke ensembles for women by fashion designer Aasiya Khan.",
   keywords: [
     "Aasiya Khan",
     "Fashion Designer",
     "Bridal Couture",
     "Luxury Lehengas",
-    "Haute Couture",
-    "Bespoke Designer Wear",
-    "Indian Luxury Fashion",
+    "Women Designer Wear",
+    "Manish Malhotra Style",
+    "Bespoke Bridal Wear",
+    "Fatima Boutique",
   ],
 };
 
@@ -39,7 +40,7 @@ export default function RootLayout({
       lang="en"
       className={`${serifFont.variable} ${sansFont.variable} scroll-smooth antialiased`}
     >
-      <body className="min-h-screen bg-[#0C0B0A] text-[#EDE7DE] selection:bg-[#C9A25D] selection:text-black">
+      <body className="min-h-screen bg-[#FAF8F5] text-[#1A1816] selection:bg-[#C5A059] selection:text-white">
         {children}
       </body>
     </html>
