@@ -73,12 +73,13 @@ function FacebookIcon({ className = "w-4 h-4" }: { className?: string }) {
   );
 }
 
-// Client's 5 Authentic Exclusive Designs
+// Client's 7 Authentic Exclusive Collections
 const ORIGINAL_DESIGNS = [
   {
     id: "navy-gown",
     title: "Royal Navy Blue Embroidered Gown",
     tagline: "An exquisite blend of royal elegance and timeless sophistication",
+    categoryGroup: "Anarkalis & Gowns",
     category: "Reception & Evening Gowns",
     badge: "Masterpiece Collection",
     images: ["/designs/navy-gown-standing.jpg", "/designs/navy-gown-flare.jpg"],
@@ -99,9 +100,57 @@ const ORIGINAL_DESIGNS = [
     ],
   },
   {
+    id: "burgundy-anarkali",
+    title: "Royal Burgundy & Golden Embroidered Anarkali Gown",
+    tagline: "Elegance in Every Stitch, Royalty in Every Design",
+    categoryGroup: "Anarkalis & Gowns",
+    category: "Royal Anarkalis",
+    badge: "Front-Open Layered",
+    images: ["/designs/burgundy-anarkali-standing.jpg", "/designs/burgundy-anarkali-sitting.jpg"],
+    price: "Custom Bespoke Order",
+    summary:
+      "Floor-length heavily flared Anarkali gown with a majestic front-open panel pattern. Contrasting burgundy inner panel highlighted by golden embroidered borders, round-neck bodice, and rich layered ruffle hemline.",
+    specs: [
+      { label: "Outfit Style", value: "Floor-length, heavily flared Anarkali gown with a beautiful front-open panel design." },
+      { label: "Colour", value: "Rich royal burgundy and deep wine." },
+      { label: "Blouse / Bodice", value: "Elegant round-neck bodice with short sleeves, adorned with intricate golden embroidery." },
+      { label: "Embroidery", value: "Beautiful all-over golden floral and ornamental threadwork creating a regal look." },
+      { label: "Front Pattern", value: "Open-front layered Anarkali pattern with a contrasting burgundy inner panel & golden border." },
+      { label: "Dupatta", value: "Matching sheer burgundy net dupatta with delicate golden motifs and embellished lace border." },
+      { label: "Hemline", value: "Rich layered ruffle finishing that adds extra volume and graceful movement." },
+      { label: "Waist Detail", value: "Beautiful golden decorative detailing at the waist enhances the overall silhouette." },
+      { label: "Overall Look", value: "Statement royal outfit combining traditional beauty with modern designer styling." },
+      { label: "Perfect For", value: "Weddings, receptions, engagement ceremonies, festive celebrations and special occasions." },
+    ],
+  },
+  {
+    id: "golden-brown-lehenga",
+    title: "Golden Brown Royal Embroidered Lehenga",
+    tagline: "Where Traditional Beauty Meets Modern Elegance",
+    categoryGroup: "Bridal & Lehengas",
+    category: "Bridal & Festive Lehenga",
+    badge: "Royal Bridal",
+    images: ["/designs/golden-brown-lehenga-front.jpg", "/designs/golden-brown-lehenga-back.jpg"],
+    price: "Heirloom Edition",
+    summary:
+      "Traditional heavily flared bridal and festive lehenga set combining antique golden beige with deep chocolate brown. Rich golden floral embroidery throughout, sheer net dupatta, and a wide pleated chocolate ruffle border.",
+    specs: [
+      { label: "Outfit Style", value: "Traditional heavily flared bridal and festive lehenga set." },
+      { label: "Colour Combination", value: "Antique golden beige paired with deep chocolate brown." },
+      { label: "Blouse", value: "Elegant short blouse with round neckline, three-quarter sleeves and intricate golden embroidery." },
+      { label: "Lehenga Skirt", value: "Beautifully crafted with rich golden floral and intricate threadwork embroidery throughout." },
+      { label: "Dupatta", value: "Sheer chocolate-brown net dupatta with delicate golden motifs and embellished golden border." },
+      { label: "Hemline Finish", value: "Wide chocolate-brown pleated ruffle border adding volume, movement and a dramatic finish." },
+      { label: "Waist Accents", value: "Decorative brown tassels with golden accents enhance the traditional look." },
+      { label: "Silhouette", value: "A voluminous, beautifully flared lehenga designed for a grand and regal appearance." },
+      { label: "Occasions", value: "Weddings, receptions, engagement ceremonies, and grand festive galas." },
+    ],
+  },
+  {
     id: "emerald-angrakha",
     title: "Royal Emerald Green Angrakha Anarkali Set",
     tagline: "A perfect blend of elegance, tradition and royal charm",
+    categoryGroup: "Anarkalis & Gowns",
     category: "Festive & Bridal Anarkalis",
     badge: "Signature Collection",
     images: ["/designs/emerald-angrakha-standing.jpg", "/designs/emerald-angrakha-sitting.jpg"],
@@ -115,7 +164,7 @@ const ORIGINAL_DESIGNS = [
       { label: "Sleeves", value: "Three-quarter sleeves adorned with delicate golden embroidery." },
       { label: "Embroidery", value: "Traditional gold floral and ornamental embroidery all over, with an elaborate embroidered hemline." },
       { label: "Bottom", value: "Matching magenta flared bottom for a graceful and voluminous look." },
-      { label: "Dupatta", value: "Sheer magenta net dupatta featuring golden diamond-pattern embroidery, embellished border and delicate hanging details." },
+      { label: "Dupatta", value: "Sheer magenta net dupatta featuring golden diamond-pattern embroidery, embellished border and hanging details." },
       { label: "Special Details", value: "Decorative magenta and gold tassels enhance the waistline." },
       { label: "Overall Look", value: "A luxurious ethnic ensemble, perfect for weddings, festive celebrations and traditional gatherings." },
     ],
@@ -124,6 +173,7 @@ const ORIGINAL_DESIGNS = [
     id: "pink-ombre-saree",
     title: "Pink Ombre Designer Saree with Embroidered Blouse",
     tagline: "Feminine charm, graceful draping and delicate embroidery",
+    categoryGroup: "Designer Sarees",
     category: "Designer Sarees",
     badge: "Exclusive Dual-Tone",
     images: ["/designs/pink-ombre-saree-front.jpg", "/designs/pink-ombre-saree-back.jpg"],
@@ -147,6 +197,7 @@ const ORIGINAL_DESIGNS = [
     id: "wine-palazzo-suit",
     title: "Royal Wine Burgundy Embroidered Palazzo Suit",
     tagline: "A sophisticated blend of royal charm and timeless craftsmanship",
+    categoryGroup: "Palazzo & Suits",
     category: "Festive & Palazzo Suits",
     badge: "Royal Pret",
     images: ["/designs/wine-burgundy-palazzo.jpg"],
@@ -169,6 +220,7 @@ const ORIGINAL_DESIGNS = [
     id: "champagne-gold-anarkali",
     title: "Champagne Gold & Red Floral Embroidered Anarkali Gown",
     tagline: "Soft champagne elegance with vibrant royal red floral accents",
+    categoryGroup: "Anarkalis & Gowns",
     category: "Bridal & Reception Anarkalis",
     badge: "Haute Couture",
     images: ["/designs/champagne-gold-anarkali.jpg"],
@@ -191,12 +243,18 @@ const ORIGINAL_DESIGNS = [
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedDesignModal, setSelectedDesignModal] = useState<typeof ORIGINAL_DESIGNS[0] | null>(null);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   // Form State
   const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [formFeedback, setFormFeedback] = useState("");
+
+  const filteredDesigns =
+    selectedCategory === "All"
+      ? ORIGINAL_DESIGNS
+      : ORIGINAL_DESIGNS.filter((d) => d.categoryGroup === selectedCategory);
 
   function getWhatsAppLink(customText?: string) {
     const text = customText
@@ -237,7 +295,7 @@ export default function Home() {
         form.reset();
       } else {
         setFormStatus("error");
-        setFormFeedback(data.error || "Failed to submit. Please try WhatsApp directly.");
+        setFormFeedback(data.error || "Failed to submit. Please message on WhatsApp directly.");
       }
     } catch {
       setFormStatus("error");
@@ -264,7 +322,7 @@ export default function Home() {
         </a>
       </aside>
 
-      {/* 2. REFINED & SLEEK DESKTOP HEADER (NO WRAPPING, BALANCED PROPORTIONS) */}
+      {/* 2. REFINED & SLEEK DESKTOP HEADER (SINGLE LINE, CLEAN PROPORTIONS) */}
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-[#EAE3D6] shadow-xs">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           
@@ -283,7 +341,7 @@ export default function Home() {
             </div>
           </a>
 
-          {/* Desktop Navigation Links (Clean Single-Line with Whitespace-Nowrap) */}
+          {/* Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center space-x-7 text-xs font-semibold tracking-wider text-[#3B4554] whitespace-nowrap">
             <a
               href="#featured-designs"
@@ -418,7 +476,7 @@ export default function Home() {
         )}
       </header>
 
-      {/* 3. HERO SHOWCASE (ROYAL MIDNIGHT NAVY THEME) */}
+      {/* 3. HERO SHOWCASE */}
       <section className="relative bg-[#0F1E36] text-white py-20 md:py-28 px-6 overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
@@ -434,8 +492,8 @@ export default function Home() {
 
             <p className="max-w-xl text-sm sm:text-base text-[#B0BCCB] font-light leading-relaxed">
               Welcome to <strong className="font-semibold text-white">{BRAND_NAME}</strong> by{" "}
-              <strong className="font-semibold text-[#E5D2AF]">{DESIGNER_NAME}</strong>. Bespoke bridal gowns,
-              designer sarees, royal anarkalis, palazzo suits, and luxury pret tailored for every special moment.
+              <strong className="font-semibold text-[#E5D2AF]">{DESIGNER_NAME}</strong>. Royal bridal gowns,
+              heirloom embroidered lehengas, ombre designer sarees, and luxury festive suits tailored to perfection.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
@@ -452,23 +510,23 @@ export default function Home() {
                 href="#featured-designs"
                 className="w-full sm:w-auto px-8 py-4 rounded-full border border-[#C5A059] hover:bg-[#C5A059] hover:text-[#0F1E36] text-[#E5D2AF] font-semibold text-xs tracking-wider uppercase transition"
               >
-                View 5 Exclusive Collections
+                View 7 Signature Collections
               </a>
             </div>
 
             {/* Badges */}
             <div className="pt-8 grid grid-cols-3 gap-6 border-t border-white/10 text-left">
               <div>
-                <p className="text-[10px] uppercase tracking-wider text-[#C5A059]">Artisanship</p>
-                <p className="font-editorial text-lg text-white">Handcrafted Karigari</p>
+                <p className="text-[10px] uppercase tracking-wider text-[#C5A059]">Karigari</p>
+                <p className="font-editorial text-lg text-white">Handcrafted Zardozi</p>
               </div>
               <div>
                 <p className="text-[10px] uppercase tracking-wider text-[#C5A059]">Fitting</p>
                 <p className="font-editorial text-lg text-white">Made-to-Measure</p>
               </div>
               <div>
-                <p className="text-[10px] uppercase tracking-wider text-[#C5A059]">Orders</p>
-                <p className="font-editorial text-lg text-white">Worldwide Delivery</p>
+                <p className="text-[10px] uppercase tracking-wider text-[#C5A059]">Delivery</p>
+                <p className="font-editorial text-lg text-white">Worldwide Shipping</p>
               </div>
             </div>
           </div>
@@ -477,19 +535,19 @@ export default function Home() {
           <div className="lg:col-span-5 relative">
             <div className="aspect-[4/5] rounded-3xl overflow-hidden border-2 border-[#C5A059]/40 shadow-2xl bg-[#091322] relative group">
               <img
-                src="/designs/navy-gown-standing.jpg"
-                alt="Aasiya Khan Royal Navy Blue Embroidered Gown"
+                src="/designs/burgundy-anarkali-standing.jpg"
+                alt="Aasiya Khan Royal Burgundy & Golden Embroidered Anarkali Gown"
                 className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0F1E36]/90 via-transparent to-transparent flex flex-col justify-end p-6">
                 <span className="text-[10px] uppercase tracking-[0.25em] text-[#C5A059] font-bold">
-                  Featured Masterpiece
+                  Latest Haute Couture Drop
                 </span>
                 <h3 className="font-editorial text-2xl text-white font-medium mt-1">
-                  Royal Navy Blue Embroidered Gown
+                  Royal Burgundy &amp; Golden Gown
                 </h3>
                 <p className="text-xs text-[#B0BCCB] mt-1">
-                  Floor-length flared gown with golden floral vine embroidery &amp; puff sleeves.
+                  Floor-length flared gown with front-open layered pattern &amp; ruffles.
                 </p>
               </div>
             </div>
@@ -498,22 +556,38 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. REAL EXCLUSIVE DESIGNS SHOWCASE (ALL 5 COLLECTIONS) */}
+      {/* 4. REAL EXCLUSIVE DESIGNS SHOWCASE (ALL 7 ORIGINAL COLLECTIONS WITH CATEGORY FILTERS) */}
       <section id="featured-designs" className="py-24 px-6 max-w-7xl mx-auto">
-        <div className="text-center space-y-3 mb-16">
-          <span className="text-[11px] uppercase tracking-[0.3em] text-[#C5A059] font-bold">
-            The Designer&apos;s Signature Ateliers
-          </span>
-          <h2 className="font-editorial text-3xl md:text-5xl font-light text-[#0F1E36]">
-            Aasiya Khan Exclusive Collections
-          </h2>
-          <p className="text-xs text-[#5A6578] tracking-wider uppercase max-w-xl mx-auto">
-            Explore authentic handcrafted ensembles created by Aasiya Khan with complete fabric, styling, and embroidery specifications
-          </p>
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-[#E5DFD5] pb-8">
+          <div>
+            <span className="text-[11px] uppercase tracking-[0.3em] text-[#C5A059] block mb-2 font-bold">
+              The Designer&apos;s Signature Ateliers
+            </span>
+            <h2 className="font-editorial text-3xl md:text-5xl font-light text-[#0F1E36]">
+              Aasiya Khan Original Collections
+            </h2>
+          </div>
+
+          {/* Category Filter Tabs */}
+          <div className="flex items-center gap-2 mt-6 md:mt-0 overflow-x-auto pb-2 md:pb-0">
+            {["All", "Bridal & Lehengas", "Anarkalis & Gowns", "Designer Sarees", "Palazzo & Suits"].map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setSelectedCategory(cat)}
+                className={`px-4 py-2 rounded-full text-xs uppercase tracking-wider transition whitespace-nowrap ${
+                  selectedCategory === cat
+                    ? "bg-[#0F1E36] text-white font-semibold shadow-md"
+                    : "bg-white border border-[#D0D9E5] text-[#4E596B] hover:border-[#0F1E36] hover:text-[#0F1E36]"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
         </div>
 
         <div className="space-y-20">
-          {ORIGINAL_DESIGNS.map((item, index) => (
+          {filteredDesigns.map((item, index) => (
             <div
               key={item.id}
               className={`grid grid-cols-1 lg:grid-cols-12 gap-10 items-center p-8 sm:p-12 rounded-3xl bg-white border border-[#E5DFD5] shadow-lg ${
@@ -521,7 +595,7 @@ export default function Home() {
               }`}
             >
               
-              {/* Image Frame: If 2 images, show dual layout; if 1 image, show single high-impact frame */}
+              {/* Image Frame */}
               <div className="lg:col-span-6">
                 {item.images.length > 1 ? (
                   <div className="grid grid-cols-2 gap-4">
@@ -532,7 +606,7 @@ export default function Home() {
                         className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                       />
                       <span className="absolute bottom-3 left-3 bg-[#0F1E36]/80 backdrop-blur-md text-white text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-md font-medium">
-                        Front View
+                        Angle 1
                       </span>
                     </div>
 
@@ -543,7 +617,7 @@ export default function Home() {
                         className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                       />
                       <span className="absolute bottom-3 left-3 bg-[#0F1E36]/80 backdrop-blur-md text-white text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-md font-medium">
-                        Detail / Flare View
+                        Angle 2
                       </span>
                     </div>
                   </div>
@@ -591,7 +665,7 @@ export default function Home() {
                     <span className="text-[#0F1E36] font-semibold">{item.specs[1].value}</span>
                   </div>
                   <div>
-                    <span className="text-[#8C7A5E] font-medium block">Fabric / Craft:</span>
+                    <span className="text-[#8C7A5E] font-medium block">Craft / Detail:</span>
                     <span className="text-[#0F1E36] font-semibold">{item.specs[2].value}</span>
                   </div>
                   <div>
@@ -908,6 +982,8 @@ export default function Home() {
                     name="category_interest"
                     className="w-full bg-[#FAF8F5] border border-[#D0D9E5] rounded-xl px-4 py-3 text-sm text-[#0F1E36] focus:outline-none focus:border-[#0F1E36] transition"
                   >
+                    <option value="Royal Burgundy & Golden Embroidered Anarkali Gown">Royal Burgundy & Golden Embroidered Anarkali Gown</option>
+                    <option value="Golden Brown Royal Embroidered Lehenga">Golden Brown Royal Embroidered Lehenga</option>
                     <option value="Royal Navy Blue Embroidered Gown">Royal Navy Blue Embroidered Gown</option>
                     <option value="Royal Emerald Green Angrakha Anarkali Set">Royal Emerald Green Angrakha Anarkali Set</option>
                     <option value="Pink Ombre Designer Saree with Embroidered Blouse">Pink Ombre Designer Saree with Embroidered Blouse</option>
