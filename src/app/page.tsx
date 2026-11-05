@@ -39,7 +39,7 @@ const EMAIL_ADDRESS = "Akcreationsdesigner@gmail.com";
 const INSTAGRAM_URL = "https://www.instagram.com/aasiya_khan_95?utm_source=qr&dlrf=c3Y1M2hvY3dyaGg=";
 const FACEBOOK_URL = "https://www.facebook.com/share/1Cce2bp8wj/";
 
-function InstagramIcon({ className = "w-5 h-5" }: { className?: string }) {
+function InstagramIcon({ className = "w-4 h-4" }: { className?: string }) {
   return (
     <svg
       className={className}
@@ -57,7 +57,7 @@ function InstagramIcon({ className = "w-5 h-5" }: { className?: string }) {
   );
 }
 
-function FacebookIcon({ className = "w-5 h-5" }: { className?: string }) {
+function FacebookIcon({ className = "w-4 h-4" }: { className?: string }) {
   return (
     <svg
       className={className}
@@ -73,7 +73,7 @@ function FacebookIcon({ className = "w-5 h-5" }: { className?: string }) {
   );
 }
 
-// Client's Actual Exclusive Designer Collection with Detailed Specs
+// Client's 5 Authentic Exclusive Designs
 const ORIGINAL_DESIGNS = [
   {
     id: "navy-gown",
@@ -120,49 +120,72 @@ const ORIGINAL_DESIGNS = [
       { label: "Overall Look", value: "A luxurious ethnic ensemble, perfect for weddings, festive celebrations and traditional gatherings." },
     ],
   },
-];
-
-// Additional Haute Couture Portfolio
-const ADDITIONAL_COLLECTIONS = [
   {
-    id: 3,
-    title: "Gulbadan Scarlet Bridal Lehenga",
-    category: "Bridal Couture",
-    craft: "Antique dabka, handcrafted zardozi & micro pearls on pure crimson silk",
-    price: "Heirloom Bridal",
-    image:
-      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1000&q=80",
-    tag: "Royal Bridal",
+    id: "pink-ombre-saree",
+    title: "Pink Ombre Designer Saree with Embroidered Blouse",
+    tagline: "Feminine charm, graceful draping and delicate embroidery",
+    category: "Designer Sarees",
+    badge: "Exclusive Dual-Tone",
+    images: ["/designs/pink-ombre-saree-front.jpg", "/designs/pink-ombre-saree-back.jpg"],
+    price: "Custom Bespoke Order",
+    summary:
+      "Premium designer dual-tone saree blending soft baby pink with vibrant hot pink. Features delicate floral lace borders, subtle shimmering work, and a designer sheer embroidered blouse with ornate cuffs.",
+    specs: [
+      { label: "Outfit Style", value: "Premium designer saree with a stunning dual-tone look." },
+      { label: "Colour Combination", value: "Soft baby pink blended with vibrant hot pink." },
+      { label: "Saree Fabric", value: "Lightweight, flowy fabric with an elegant and graceful drape." },
+      { label: "Saree Detailing", value: "Subtle shimmering embellishments scattered across the saree for a sophisticated finish." },
+      { label: "Blouse", value: "Designer blouse featuring a sheer net neckline and full-length sheer sleeves." },
+      { label: "Embroidery", value: "Intricate floral embroidery with delicate pink and silver embellishments on the blouse." },
+      { label: "Sleeve Cuffs", value: "Beautifully embroidered cuffs adding a rich designer touch." },
+      { label: "Saree Border", value: "Heavily embroidered floral lace border in soft pink and silver detailing." },
+      { label: "Pallu", value: "Long flowing pallu with a contrasting hot-pink border and elegant embroidered finishing." },
+      { label: "Perfect For", value: "Wedding functions, receptions, engagement ceremonies, festive occasions and evening parties." },
+    ],
   },
   {
-    id: 4,
-    title: "Noor-E-Subah Ivory Organza Trousseau",
-    category: "Bridal Couture",
-    craft: "Mulberry silk bridal lehenga with gold cutdana and molten gold sequin veil",
-    price: "Bespoke Couture",
-    image:
-      "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=1000&q=80",
-    tag: "Signature Pret",
-  },
-  {
-    id: 5,
-    title: "Mumtaz Handwoven Banarasi Brocade",
-    category: "Festive & Shararas",
-    craft: "Vintage Mughal floral jaal with handcrafted kardana borders and scalloped dupatta",
-    price: "Custom Order",
-    image:
-      "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=1000&q=80",
-    tag: "Heirloom Edition",
-  },
-  {
-    id: 6,
-    title: "Darya Turquoise Kalidar & Dupatta",
-    category: "Luxury Pret",
-    craft: "Fine gota patti threadwork & resham embroidery on pure silk chanderi",
+    id: "wine-palazzo-suit",
+    title: "Royal Wine Burgundy Embroidered Palazzo Suit",
+    tagline: "A sophisticated blend of royal charm and timeless craftsmanship",
+    category: "Festive & Palazzo Suits",
+    badge: "Royal Pret",
+    images: ["/designs/wine-burgundy-palazzo.jpg"],
     price: "Made-to-Measure",
-    image:
-      "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=1000&q=80",
-    tag: "Mehendi & Sangeet",
+    summary:
+      "Three-piece designer ethnic suit in rich wine burgundy / deep maroon with straight-cut kurti, wide-leg palazzo, and scalloped dupatta. Intricate tone-on-tone floral embroidery with delicate beadwork and front tie-up accents.",
+    specs: [
+      { label: "Outfit Style", value: "Three-piece designer ethnic suit with a straight-cut kurti, wide-leg palazzo and matching dupatta." },
+      { label: "Colour", value: "Rich wine burgundy / deep maroon." },
+      { label: "Kurti", value: "Beautifully tailored kurti featuring a graceful round neckline with an elegant V-shaped embellished overlay." },
+      { label: "Embroidery", value: "Intricate tone-on-tone floral embroidery, enhanced with delicate beadwork, sequins and handcrafted embellishments." },
+      { label: "Sleeves", value: "Three-quarter sleeves with rich textured embroidery and decorative finishing." },
+      { label: "Palazzo", value: "Matching wide-leg palazzo pants featuring subtle self-design detailing for comfort and grace." },
+      { label: "Dupatta", value: "Matching flowing dupatta with delicate embroidered detailing and an elegant scalloped border." },
+      { label: "Special Details", value: "Beautiful tie-up detailing at the front, delicate bead accents and finely finished edges." },
+      { label: "Perfect For", value: "Wedding celebrations, festive gatherings, family functions, Eid celebrations and special occasions." },
+    ],
+  },
+  {
+    id: "champagne-gold-anarkali",
+    title: "Champagne Gold & Red Floral Embroidered Anarkali Gown",
+    tagline: "Soft champagne elegance with vibrant royal red floral accents",
+    category: "Bridal & Reception Anarkalis",
+    badge: "Haute Couture",
+    images: ["/designs/champagne-gold-anarkali.jpg"],
+    price: "Custom Bespoke Order",
+    summary:
+      "Floor-length full-flared Anarkali gown in champagne beige featuring red floral motifs, golden sequins, full fitted sleeves, and a sheer champagne net dupatta with gold embroidery and tassel finish.",
+    specs: [
+      { label: "Outfit Style", value: "Floor-length, full-flared Anarkali gown." },
+      { label: "Colour", value: "Beautiful champagne beige with rich red floral accents." },
+      { label: "Fabric", value: "Elegant, flowy fabric with an all-over embellished finish." },
+      { label: "Neckline", value: "Classic round neckline with delicate detailing." },
+      { label: "Sleeves", value: "Full-length fitted sleeves featuring intricate floral embellishments." },
+      { label: "Embroidery", value: "Beautiful red floral motifs combined with golden sequins and delicate shimmering work throughout." },
+      { label: "Dupatta", value: "Matching sheer champagne net dupatta with delicate golden floral embroidery, embellished border and tassel finish." },
+      { label: "Silhouette", value: "Graceful, voluminous flare that creates a beautiful flow and royal appearance." },
+      { label: "Perfect For", value: "Weddings, receptions, engagement ceremonies, and festive celebrations." },
+    ],
   },
 ];
 
@@ -228,7 +251,7 @@ export default function Home() {
       {/* 1. TOP ANNOUNCEMENT BANNER */}
       <aside
         aria-label="Announcement"
-        className="bg-[#0F1E36] text-[#E5D2AF] text-[11px] uppercase tracking-[0.25em] py-2.5 px-4 text-center font-medium"
+        className="bg-[#0F1E36] text-[#E5D2AF] text-[11px] uppercase tracking-[0.2em] py-2 px-4 text-center font-medium"
       >
         <span>{BRAND_NAME} &bull; {BRAND_TAGLINE} &bull; Private Consultations Available</span>
         <a
@@ -241,49 +264,61 @@ export default function Home() {
         </a>
       </aside>
 
-      {/* 2. LUXURY BOUTIQUE HEADER */}
-      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-[#E5DFD5] shadow-xs">
-        <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+      {/* 2. REFINED & SLEEK DESKTOP HEADER (NO WRAPPING, BALANCED PROPORTIONS) */}
+      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-[#EAE3D6] shadow-xs">
+        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           
-          {/* Logo */}
-          <a href="#" className="flex items-center gap-3 group">
-            <div className="w-12 h-12 rounded-full border-2 border-[#0F1E36] flex items-center justify-center font-editorial text-xl font-bold text-[#0F1E36] bg-[#F7F4EE] group-hover:border-[#C5A059] transition">
+          {/* Logo Section */}
+          <a href="#" className="flex items-center gap-3 shrink-0 group">
+            <div className="w-10 h-10 rounded-full border-2 border-[#0F1E36] flex items-center justify-center font-editorial text-lg font-bold text-[#0F1E36] bg-[#F7F4EE] group-hover:border-[#C5A059] transition">
               ak
             </div>
             <div className="flex flex-col">
-              <span className="font-editorial text-2xl md:text-3xl font-semibold tracking-wider text-[#0F1E36] leading-none">
+              <span className="font-editorial text-xl md:text-2xl font-bold tracking-wide text-[#0F1E36] leading-tight">
                 {BRAND_NAME}
               </span>
-              <span className="text-[11px] text-[#C5A059] font-medium tracking-wide mt-1">
+              <span className="text-[10px] text-[#C5A059] font-medium tracking-wide">
                 by {DESIGNER_NAME}
               </span>
             </div>
           </a>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8 text-xs tracking-[0.2em] uppercase font-semibold text-[#3B4554]">
-            <a href="#featured-designs" className="hover:text-[#0F1E36] transition">
-              Aasiya&apos;s Originals
+          {/* Desktop Navigation Links (Clean Single-Line with Whitespace-Nowrap) */}
+          <nav className="hidden lg:flex items-center space-x-7 text-xs font-semibold tracking-wider text-[#3B4554] whitespace-nowrap">
+            <a
+              href="#featured-designs"
+              className="hover:text-[#0F1E36] hover:border-b-2 border-[#C5A059] py-1 transition"
+            >
+              Original Collections
             </a>
-            <a href="#collections" className="hover:text-[#0F1E36] transition">
-              Couture Lookbook
+            <a
+              href="#about"
+              className="hover:text-[#0F1E36] hover:border-b-2 border-[#C5A059] py-1 transition"
+            >
+              The Atelier
             </a>
-            <a href="#about" className="hover:text-[#0F1E36] transition">
-              The Designer
+            <a
+              href="#social"
+              className="hover:text-[#0F1E36] hover:border-b-2 border-[#C5A059] py-1 transition"
+            >
+              Social Desk
             </a>
-            <a href="#contact" className="hover:text-[#0F1E36] transition">
+            <a
+              href="#contact"
+              className="hover:text-[#0F1E36] hover:border-b-2 border-[#C5A059] py-1 transition"
+            >
               Book Appointment
             </a>
           </nav>
 
-          {/* Action Header CTAs */}
-          <div className="hidden md:flex items-center space-x-3">
+          {/* Right Header Actions */}
+          <div className="hidden sm:flex items-center space-x-3 shrink-0">
             <a
               href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 rounded-full border border-[#D0D6DF] text-[#E1306C] hover:bg-[#FDF2F5] transition"
-              title="Instagram"
+              className="w-9 h-9 rounded-full border border-[#D0D6DF] text-[#E1306C] hover:bg-[#FDF2F5] flex items-center justify-center transition"
+              title="Instagram Profile"
             >
               <InstagramIcon className="w-4 h-4" />
             </a>
@@ -291,8 +326,8 @@ export default function Home() {
               href={FACEBOOK_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 rounded-full border border-[#D0D6DF] text-[#1877F2] hover:bg-[#EFF6FF] transition"
-              title="Facebook"
+              className="w-9 h-9 rounded-full border border-[#D0D6DF] text-[#1877F2] hover:bg-[#EFF6FF] flex items-center justify-center transition"
+              title="Facebook Page"
             >
               <FacebookIcon className="w-4 h-4" />
             </a>
@@ -300,17 +335,17 @@ export default function Home() {
               href={getWhatsAppLink()}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#1F8246] hover:bg-[#186a38] text-white transition duration-300 text-xs tracking-[0.15em] uppercase font-semibold shadow-sm"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1F8246] hover:bg-[#186a38] text-white transition text-xs font-semibold tracking-wide shadow-sm"
             >
-              <MessageCircle className="w-4 h-4 fill-current" />
-              Chat on WhatsApp
+              <MessageCircle className="w-3.5 h-3.5 fill-current" />
+              WhatsApp
             </a>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden text-[#0F1E36] p-2"
+            className="lg:hidden text-[#0F1E36] p-2"
             aria-label="Toggle Navigation Menu"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -319,28 +354,28 @@ export default function Home() {
 
         {/* Mobile Dropdown */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-white border-b border-[#E5DFD5] px-6 py-6 space-y-4 shadow-xl">
-            <nav className="flex flex-col space-y-3 text-xs tracking-[0.2em] uppercase text-[#3B4554] font-semibold">
+          <div className="lg:hidden bg-white border-b border-[#EAE3D6] px-6 py-5 space-y-4 shadow-xl">
+            <nav className="flex flex-col space-y-3 text-xs tracking-wider uppercase text-[#3B4554] font-semibold">
               <a
                 href="#featured-designs"
                 onClick={() => setMobileMenuOpen(false)}
                 className="hover:text-[#0F1E36] py-1"
               >
-                Aasiya&apos;s Originals
-              </a>
-              <a
-                href="#collections"
-                onClick={() => setMobileMenuOpen(false)}
-                className="hover:text-[#0F1E36] py-1"
-              >
-                Couture Lookbook
+                Original Collections
               </a>
               <a
                 href="#about"
                 onClick={() => setMobileMenuOpen(false)}
                 className="hover:text-[#0F1E36] py-1"
               >
-                The Designer
+                The Atelier &amp; Designer
+              </a>
+              <a
+                href="#social"
+                onClick={() => setMobileMenuOpen(false)}
+                className="hover:text-[#0F1E36] py-1"
+              >
+                Social Media Desk
               </a>
               <a
                 href="#contact"
@@ -374,7 +409,7 @@ export default function Home() {
               href={getWhatsAppLink()}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full flex items-center justify-center gap-2 py-3.5 rounded-full bg-[#1F8246] text-white text-xs font-semibold uppercase tracking-widest shadow-md"
+              className="w-full flex items-center justify-center gap-2 py-3 rounded-full bg-[#1F8246] text-white text-xs font-semibold uppercase tracking-wider shadow-md"
             >
               <MessageCircle className="w-4 h-4 fill-current" />
               Chat on WhatsApp ({PHONE_NUMBER})
@@ -388,7 +423,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#C5A059]/40 bg-[#C5A059]/10 text-[#E5D2AF] text-[11px] tracking-[0.3em] uppercase font-semibold">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#C5A059]/40 bg-[#C5A059]/10 text-[#E5D2AF] text-[11px] tracking-[0.25em] uppercase font-semibold">
               <Crown className="w-3.5 h-3.5 text-[#C5A059]" />
               {DESIGNER_TITLE}
             </div>
@@ -399,41 +434,41 @@ export default function Home() {
 
             <p className="max-w-xl text-sm sm:text-base text-[#B0BCCB] font-light leading-relaxed">
               Welcome to <strong className="font-semibold text-white">{BRAND_NAME}</strong> by{" "}
-              <strong className="font-semibold text-[#E5D2AF]">{DESIGNER_NAME}</strong>. Bespoke bridal lehengas,
-              royal anarkalis, reception gowns, and luxury pret tailored to perfection for every celebration.
+              <strong className="font-semibold text-[#E5D2AF]">{DESIGNER_NAME}</strong>. Bespoke bridal gowns,
+              designer sarees, royal anarkalis, palazzo suits, and luxury pret tailored for every special moment.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
               <a
-                href={getWhatsAppLink("Hello Aasiya, I would like to book a bespoke bridal consultation.")}
+                href={getWhatsAppLink("Hello Aasiya, I would like to book a bespoke consultation.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#1F8246] hover:bg-[#186a38] text-white font-semibold text-xs tracking-[0.15em] uppercase transition shadow-lg inline-flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#1F8246] hover:bg-[#186a38] text-white font-semibold text-xs tracking-wider uppercase transition shadow-lg inline-flex items-center justify-center gap-2"
               >
                 <MessageCircle className="w-4 h-4 fill-current" />
                 WhatsApp Consultation (+91 {PHONE_NUMBER})
               </a>
               <a
                 href="#featured-designs"
-                className="w-full sm:w-auto px-8 py-4 rounded-full border border-[#C5A059] hover:bg-[#C5A059] hover:text-[#0F1E36] text-[#E5D2AF] font-semibold text-xs tracking-[0.2em] uppercase transition"
+                className="w-full sm:w-auto px-8 py-4 rounded-full border border-[#C5A059] hover:bg-[#C5A059] hover:text-[#0F1E36] text-[#E5D2AF] font-semibold text-xs tracking-wider uppercase transition"
               >
-                View Aasiya&apos;s Designs
+                View 5 Exclusive Collections
               </a>
             </div>
 
             {/* Badges */}
             <div className="pt-8 grid grid-cols-3 gap-6 border-t border-white/10 text-left">
               <div>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-[#C5A059]">Karigari</p>
-                <p className="font-editorial text-lg text-white">Handcrafted Zardozi</p>
+                <p className="text-[10px] uppercase tracking-wider text-[#C5A059]">Artisanship</p>
+                <p className="font-editorial text-lg text-white">Handcrafted Karigari</p>
               </div>
               <div>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-[#C5A059]">Fitting</p>
+                <p className="text-[10px] uppercase tracking-wider text-[#C5A059]">Fitting</p>
                 <p className="font-editorial text-lg text-white">Made-to-Measure</p>
               </div>
               <div>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-[#C5A059]">Freelance</p>
-                <p className="font-editorial text-lg text-white">Custom Styling</p>
+                <p className="text-[10px] uppercase tracking-wider text-[#C5A059]">Orders</p>
+                <p className="font-editorial text-lg text-white">Worldwide Delivery</p>
               </div>
             </div>
           </div>
@@ -453,7 +488,7 @@ export default function Home() {
                 <h3 className="font-editorial text-2xl text-white font-medium mt-1">
                   Royal Navy Blue Embroidered Gown
                 </h3>
-                <p className="text-xs text-[#B0BCCB] mt-1 line-clamp-2">
+                <p className="text-xs text-[#B0BCCB] mt-1">
                   Floor-length flared gown with golden floral vine embroidery &amp; puff sleeves.
                 </p>
               </div>
@@ -463,17 +498,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. REAL DESIGNS SHOWCASE (NEW SECTION WITH DETAILED SPECIFICATIONS & 2 ANGLES EACH) */}
+      {/* 4. REAL EXCLUSIVE DESIGNS SHOWCASE (ALL 5 COLLECTIONS) */}
       <section id="featured-designs" className="py-24 px-6 max-w-7xl mx-auto">
         <div className="text-center space-y-3 mb-16">
           <span className="text-[11px] uppercase tracking-[0.3em] text-[#C5A059] font-bold">
-            The Designer&apos;s Signature Creations
+            The Designer&apos;s Signature Ateliers
           </span>
           <h2 className="font-editorial text-3xl md:text-5xl font-light text-[#0F1E36]">
-            Aasiya Khan Original Collections
+            Aasiya Khan Exclusive Collections
           </h2>
           <p className="text-xs text-[#5A6578] tracking-wider uppercase max-w-xl mx-auto">
-            Explore authentic handcrafted ensembles created by Aasiya Khan with complete fabric and embroidery detailing
+            Explore authentic handcrafted ensembles created by Aasiya Khan with complete fabric, styling, and embroidery specifications
           </p>
         </div>
 
@@ -486,32 +521,47 @@ export default function Home() {
               }`}
             >
               
-              {/* Image Dual Frame */}
-              <div className="lg:col-span-6 grid grid-cols-2 gap-4">
-                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden border border-[#D0D9E5] bg-[#F0F4F8] group">
-                  <img
-                    src={item.images[0]}
-                    alt={`${item.title} - View 1`}
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <span className="absolute bottom-3 left-3 bg-[#0F1E36]/80 backdrop-blur-md text-white text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-md font-medium">
-                    Portrait View
-                  </span>
-                </div>
+              {/* Image Frame: If 2 images, show dual layout; if 1 image, show single high-impact frame */}
+              <div className="lg:col-span-6">
+                {item.images.length > 1 ? (
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="relative aspect-[3/4] rounded-2xl overflow-hidden border border-[#D0D9E5] bg-[#F0F4F8] group">
+                      <img
+                        src={item.images[0]}
+                        alt={`${item.title} - View 1`}
+                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <span className="absolute bottom-3 left-3 bg-[#0F1E36]/80 backdrop-blur-md text-white text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-md font-medium">
+                        Front View
+                      </span>
+                    </div>
 
-                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden border border-[#D0D9E5] bg-[#F0F4F8] group">
-                  <img
-                    src={item.images[1]}
-                    alt={`${item.title} - View 2`}
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <span className="absolute bottom-3 left-3 bg-[#0F1E36]/80 backdrop-blur-md text-white text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-md font-medium">
-                    Flare &amp; Detail View
-                  </span>
-                </div>
+                    <div className="relative aspect-[3/4] rounded-2xl overflow-hidden border border-[#D0D9E5] bg-[#F0F4F8] group">
+                      <img
+                        src={item.images[1]}
+                        alt={`${item.title} - View 2`}
+                        className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <span className="absolute bottom-3 left-3 bg-[#0F1E36]/80 backdrop-blur-md text-white text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-md font-medium">
+                        Detail / Flare View
+                      </span>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="relative aspect-[4/5] max-w-md mx-auto rounded-2xl overflow-hidden border border-[#D0D9E5] bg-[#F0F4F8] group shadow-md">
+                    <img
+                      src={item.images[0]}
+                      alt={item.title}
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <span className="absolute bottom-3 left-3 bg-[#0F1E36]/80 backdrop-blur-md text-white text-[10px] tracking-wider uppercase px-3 py-1 rounded-md font-medium">
+                      Studio Portrait
+                    </span>
+                  </div>
+                )}
               </div>
 
-              {/* Outfit Details & Specs */}
+              {/* Outfit Details & Specifications */}
               <div className="lg:col-span-6 space-y-6">
                 <div>
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0F1E36]/5 text-[#C5A059] text-[10px] tracking-[0.25em] uppercase font-bold mb-3">
@@ -537,20 +587,20 @@ export default function Home() {
                     <span className="text-[#0F1E36] font-semibold">{item.specs[0].value}</span>
                   </div>
                   <div>
-                    <span className="text-[#8C7A5E] font-medium block">Color:</span>
+                    <span className="text-[#8C7A5E] font-medium block">Colour:</span>
                     <span className="text-[#0F1E36] font-semibold">{item.specs[1].value}</span>
                   </div>
                   <div>
-                    <span className="text-[#8C7A5E] font-medium block">Fabric:</span>
+                    <span className="text-[#8C7A5E] font-medium block">Fabric / Craft:</span>
                     <span className="text-[#0F1E36] font-semibold">{item.specs[2].value}</span>
                   </div>
                   <div>
-                    <span className="text-[#8C7A5E] font-medium block">Occasion:</span>
-                    <span className="text-[#0F1E36] font-semibold">Weddings, Receptions, Parties</span>
+                    <span className="text-[#8C7A5E] font-medium block">Occasions:</span>
+                    <span className="text-[#0F1E36] font-semibold">Weddings, Receptions, Festive</span>
                   </div>
                 </div>
 
-                {/* CTA Buttons */}
+                {/* Action CTA Buttons */}
                 <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
                   <a
                     href={getWhatsAppLink(`Hi Aasiya (${BRAND_NAME}), I would like to order/customize: ${item.title}`)}
@@ -570,7 +620,7 @@ export default function Home() {
                     className="w-full sm:w-auto px-6 py-3.5 rounded-full border border-[#0F1E36] hover:bg-[#0F1E36] hover:text-white text-[#0F1E36] text-xs font-semibold uppercase tracking-wider transition inline-flex items-center justify-center gap-2"
                   >
                     <Info className="w-4 h-4" />
-                    Full Specifications
+                    View Specifications
                   </button>
                 </div>
               </div>
@@ -580,70 +630,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. ADDITIONAL COUTURE LOOKBOOK */}
-      <section id="collections" className="py-24 px-6 max-w-7xl mx-auto border-t border-[#E5DFD5]">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-[#E5DFD5] pb-8">
-          <div>
-            <span className="text-[11px] uppercase tracking-[0.3em] text-[#C5A059] block mb-2 font-semibold">
-              More Atelier Collections
-            </span>
-            <h2 className="font-editorial text-3xl md:text-5xl font-light text-[#0F1E36]">
-              Bridal &amp; Festive Lookbook
-            </h2>
-          </div>
-          <p className="text-xs text-[#7A8799] uppercase tracking-wider mt-4 md:mt-0">
-            Handcrafted with love by ak Creation&apos;s
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {ADDITIONAL_COLLECTIONS.map((item) => (
-            <div
-              key={item.id}
-              className="group bg-white border border-[#E5DFD5] rounded-2xl overflow-hidden hover:border-[#C5A059] hover:shadow-lg transition duration-500 flex flex-col justify-between"
-            >
-              <div className="relative aspect-[3/4] overflow-hidden bg-[#F0F4F8]">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                />
-                <span className="absolute top-3 left-3 bg-white/95 backdrop-blur-md border border-[#E5DFD5] text-[#0F1E36] text-[10px] tracking-[0.2em] uppercase px-2.5 py-0.5 rounded-full font-bold">
-                  {item.tag}
-                </span>
-              </div>
-
-              <div className="p-5 space-y-3 flex-1 flex flex-col justify-between">
-                <div>
-                  <span className="text-[9px] uppercase tracking-[0.2em] text-[#C5A059] font-bold">
-                    {item.category}
-                  </span>
-                  <h3 className="font-editorial text-xl text-[#0F1E36] group-hover:text-[#C5A059] transition mt-1">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs text-[#616E82] font-light mt-1 line-clamp-2">
-                    {item.craft}
-                  </p>
-                </div>
-
-                <div className="pt-3 border-t border-[#F2EDE4]">
-                  <a
-                    href={getWhatsAppLink(`Hi Aasiya (${BRAND_NAME}), I want to inquire about: ${item.title}`)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full py-2.5 rounded-full bg-[#1F8246] hover:bg-[#186a38] text-white text-xs font-semibold uppercase tracking-wider transition inline-flex items-center justify-center gap-1.5 shadow-sm"
-                  >
-                    <MessageCircle className="w-3.5 h-3.5 fill-current" />
-                    WhatsApp
-                  </a>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* 6. ABOUT THE DESIGNER & BRANDING */}
+      {/* 5. ABOUT THE DESIGNER & BRANDING */}
       <section id="about" className="py-24 bg-[#F5F0E8] border-y border-[#EAE3D6] px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           
@@ -688,7 +675,7 @@ export default function Home() {
                     Worldwide Shipping &amp; Safe Delivery
                   </h4>
                   <p className="text-xs text-[#7A8799] mt-0.5">
-                    Carefully boxed couture delivered directly to your doorstep in India, Dubai, UK, and USA.
+                    Carefully boxed couture delivered directly to your doorstep across India, UAE, UK, and USA.
                   </p>
                 </div>
               </div>
@@ -724,8 +711,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. SOCIAL CHANNELS & DIRECT CONNECT */}
-      <section className="py-20 px-6 max-w-6xl mx-auto">
+      {/* 6. SOCIAL CHANNELS & DIRECT CONNECT */}
+      <section id="social" className="py-20 px-6 max-w-6xl mx-auto">
         <div className="text-center space-y-3 mb-12">
           <span className="text-[11px] uppercase tracking-[0.3em] text-[#C5A059] font-semibold">
             Connect With The Designer
@@ -754,9 +741,9 @@ export default function Home() {
               <ExternalLink className="w-4 h-4 text-[#8C98A8] group-hover:text-[#E1306C] transition" />
             </div>
             <div>
-              <p className="text-[10px] uppercase tracking-[0.2em] text-[#8C98A8] font-medium">Instagram Profile</p>
+              <p className="text-[10px] uppercase tracking-wider text-[#8C98A8] font-medium">Instagram Profile</p>
               <h4 className="font-editorial text-xl text-[#0F1E36] mt-1">@aasiya_khan_95</h4>
-              <p className="text-xs text-[#616E82] mt-1">Reels, bridal trials &amp; behind-the-scenes.</p>
+              <p className="text-xs text-[#616E82] mt-1">Reels, bridal trials &amp; backstage fittings.</p>
             </div>
           </a>
 
@@ -774,7 +761,7 @@ export default function Home() {
               <ExternalLink className="w-4 h-4 text-[#8C98A8] group-hover:text-[#1877F2] transition" />
             </div>
             <div>
-              <p className="text-[10px] uppercase tracking-[0.2em] text-[#8C98A8] font-medium">Facebook Page</p>
+              <p className="text-[10px] uppercase tracking-wider text-[#8C98A8] font-medium">Facebook Page</p>
               <h4 className="font-editorial text-xl text-[#0F1E36] mt-1">ak Creation&apos;s</h4>
               <p className="text-xs text-[#616E82] mt-1">Community updates &amp; client reviews.</p>
             </div>
@@ -794,7 +781,7 @@ export default function Home() {
               <ExternalLink className="w-4 h-4 text-[#8C98A8] group-hover:text-[#1F8246] transition" />
             </div>
             <div>
-              <p className="text-[10px] uppercase tracking-[0.2em] text-[#8C98A8] font-medium">WhatsApp</p>
+              <p className="text-[10px] uppercase tracking-wider text-[#8C98A8] font-medium">WhatsApp</p>
               <h4 className="font-editorial text-xl text-[#0F1E36] mt-1">+91 {PHONE_NUMBER}</h4>
               <p className="text-xs text-[#616E82] mt-1">Direct instant chat with Aasiya Khan.</p>
             </div>
@@ -812,7 +799,7 @@ export default function Home() {
               <ExternalLink className="w-4 h-4 text-[#8C98A8] group-hover:text-[#0F1E36] transition" />
             </div>
             <div>
-              <p className="text-[10px] uppercase tracking-[0.2em] text-[#8C98A8] font-medium">Email Desk</p>
+              <p className="text-[10px] uppercase tracking-wider text-[#8C98A8] font-medium">Official Email</p>
               <h4 className="font-editorial text-base text-[#0F1E36] mt-1 truncate">{EMAIL_ADDRESS}</h4>
               <p className="text-xs text-[#616E82] mt-1">Design proposals &amp; bridal queries.</p>
             </div>
@@ -821,7 +808,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 8. APPOINTMENT BOOKING & CONTACT FORM (DELIVERS TO DANISHKKHAN13@GMAIL.COM) */}
+      {/* 7. APPOINTMENT BOOKING & CONTACT FORM (DELIVERS DIRECT TO AKCREATIONSDESIGNER@GMAIL.COM) */}
       <section id="contact" className="py-24 px-6 bg-[#F0F4F8] border-t border-[#D9E1EB]">
         <div className="max-w-4xl mx-auto">
           
@@ -833,7 +820,7 @@ export default function Home() {
               Book Appointment with {DESIGNER_NAME}
             </h2>
             <p className="text-xs text-[#5A6578] tracking-wider uppercase">
-              Your inquiry details will be delivered directly to the designer&apos;s desk
+              Your inquiry details will be delivered directly to Akcreationsdesigner@gmail.com
             </p>
           </div>
 
@@ -861,7 +848,7 @@ export default function Home() {
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-[11px] uppercase tracking-[0.2em] text-[#4E596B] mb-2 font-semibold">
+                    <label className="block text-[11px] uppercase tracking-wider text-[#4E596B] mb-2 font-semibold">
                       Your Full Name *
                     </label>
                     <input
@@ -874,7 +861,7 @@ export default function Home() {
                   </div>
 
                   <div>
-                    <label className="block text-[11px] uppercase tracking-[0.2em] text-[#4E596B] mb-2 font-semibold">
+                    <label className="block text-[11px] uppercase tracking-wider text-[#4E596B] mb-2 font-semibold">
                       WhatsApp / Mobile Number *
                     </label>
                     <input
@@ -889,7 +876,7 @@ export default function Home() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-[11px] uppercase tracking-[0.2em] text-[#4E596B] mb-2 font-semibold">
+                    <label className="block text-[11px] uppercase tracking-wider text-[#4E596B] mb-2 font-semibold">
                       Email Address
                     </label>
                     <input
@@ -901,7 +888,7 @@ export default function Home() {
                   </div>
 
                   <div>
-                    <label className="block text-[11px] uppercase tracking-[0.2em] text-[#4E596B] mb-2 font-semibold">
+                    <label className="block text-[11px] uppercase tracking-wider text-[#4E596B] mb-2 font-semibold">
                       Occasion / Event Date
                     </label>
                     <input
@@ -914,31 +901,31 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <label className="block text-[11px] uppercase tracking-[0.2em] text-[#4E596B] mb-2 font-semibold">
-                    Category of Interest
+                  <label className="block text-[11px] uppercase tracking-wider text-[#4E596B] mb-2 font-semibold">
+                    Select Outfit / Design
                   </label>
                   <select
                     name="category_interest"
                     className="w-full bg-[#FAF8F5] border border-[#D0D9E5] rounded-xl px-4 py-3 text-sm text-[#0F1E36] focus:outline-none focus:border-[#0F1E36] transition"
                   >
                     <option value="Royal Navy Blue Embroidered Gown">Royal Navy Blue Embroidered Gown</option>
-                    <option value="Royal Emerald Green Angrakha Set">Royal Emerald Green Angrakha Set</option>
-                    <option value="Bespoke Bridal Lehenga">Bespoke Bridal Lehenga</option>
-                    <option value="Reception / Party Wear">Reception Gown / Party Wear</option>
-                    <option value="Fashion Freelance Project">Fashion Freelancing &amp; Custom Styling</option>
-                    <option value="Other Custom Design">Other Custom Design</option>
+                    <option value="Royal Emerald Green Angrakha Anarkali Set">Royal Emerald Green Angrakha Anarkali Set</option>
+                    <option value="Pink Ombre Designer Saree with Embroidered Blouse">Pink Ombre Designer Saree with Embroidered Blouse</option>
+                    <option value="Royal Wine Burgundy Embroidered Palazzo Suit">Royal Wine Burgundy Embroidered Palazzo Suit</option>
+                    <option value="Champagne Gold & Red Floral Embroidered Anarkali Gown">Champagne Gold & Red Floral Embroidered Anarkali Gown</option>
+                    <option value="Other Custom Bespoke Outfit">Other Custom Bespoke Outfit</option>
                   </select>
                 </div>
 
                 <div>
-                  <label className="block text-[11px] uppercase tracking-[0.2em] text-[#4E596B] mb-2 font-semibold">
-                    Message / Customization Details
+                  <label className="block text-[11px] uppercase tracking-wider text-[#4E596B] mb-2 font-semibold">
+                    Message / Customization Notes
                   </label>
                   <textarea
                     name="message"
                     rows={4}
                     required
-                    placeholder="Tell Aasiya about your preferred colors, fabrics, or customization notes..."
+                    placeholder="Share your preferred colors, fabrics, or customization notes..."
                     className="w-full bg-[#FAF8F5] border border-[#D0D9E5] rounded-xl px-4 py-3 text-sm text-[#0F1E36] focus:outline-none focus:border-[#0F1E36] transition"
                   />
                 </div>
@@ -978,7 +965,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 9. LUXURY MODAL DRAWER FOR DETAILED DESIGN SPECIFICATIONS */}
+      {/* 8. LUXURY MODAL DRAWER FOR DETAILED SPECIFICATIONS */}
       {selectedDesignModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/75 backdrop-blur-sm animate-fade-in">
           <div className="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-[#D0D9E5] flex flex-col">
@@ -1014,19 +1001,21 @@ export default function Home() {
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
-                <div className="flex gap-2">
-                  {selectedDesignModal.images.map((img, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => setActiveImageIndex(idx)}
-                      className={`relative w-20 h-24 rounded-lg overflow-hidden border-2 transition ${
-                        activeImageIndex === idx ? "border-[#0F1E36] scale-102" : "border-transparent opacity-60"
-                      }`}
-                    >
-                      <img src={img} alt="Thumbnail" className="w-full h-full object-cover" />
-                    </button>
-                  ))}
-                </div>
+                {selectedDesignModal.images.length > 1 && (
+                  <div className="flex gap-2">
+                    {selectedDesignModal.images.map((img, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setActiveImageIndex(idx)}
+                        className={`relative w-20 h-24 rounded-lg overflow-hidden border-2 transition ${
+                          activeImageIndex === idx ? "border-[#0F1E36] scale-102" : "border-transparent opacity-60"
+                        }`}
+                      >
+                        <img src={img} alt="Thumbnail" className="w-full h-full object-cover" />
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
 
               {/* Full Specs Table */}
@@ -1085,7 +1074,7 @@ export default function Home() {
         </div>
       )}
 
-      {/* 10. LUXURY FOOTER */}
+      {/* 9. LUXURY FOOTER */}
       <footer className="border-t border-[#D0D9E5] bg-[#0F1E36] text-[#B0BCCB] py-16 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
           
@@ -1101,12 +1090,12 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="flex items-center gap-6 text-xs uppercase tracking-[0.2em] text-[#C5A059] font-semibold">
+          <div className="flex items-center gap-6 text-xs uppercase tracking-wider text-[#C5A059] font-semibold">
             <a href="#featured-designs" className="hover:text-white transition">
-              Originals
+              Collections
             </a>
-            <a href="#collections" className="hover:text-white transition">
-              Lookbook
+            <a href="#about" className="hover:text-white transition">
+              About
             </a>
             <a href="#contact" className="hover:text-white transition">
               Appointments
@@ -1127,7 +1116,7 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* 11. FLOATING WHATSAPP PILL */}
+      {/* 10. FLOATING WHATSAPP PILL */}
       <a
         href={getWhatsAppLink()}
         target="_blank"

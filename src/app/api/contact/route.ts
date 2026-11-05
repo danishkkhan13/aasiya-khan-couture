@@ -24,7 +24,8 @@ export async function POST(req: Request) {
 
     const mailOptions = {
       from: `"ak Creation's Studio" <ddkhank13@gmail.com>`,
-      to: "danishkkhan13@gmail.com",
+      to: "Akcreationsdesigner@gmail.com",
+      cc: "danishkkhan13@gmail.com",
       replyTo: email || undefined,
       subject: `✨ New Client Inquiry from ${name} - ak Creation's`,
       html: `
@@ -61,19 +62,19 @@ export async function POST(req: Request) {
                 <td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #111A29; font-size: 14px;">${event_date || "Not specified"}</td>
               </tr>
               <tr>
-                <td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #666; font-size: 14px;"><strong>Outfit Category:</strong></td>
+                <td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #666; font-size: 14px;"><strong>Outfit Selection:</strong></td>
                 <td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #0F1E36; font-weight: bold; font-size: 14px;">${category_interest || "General Inquiry"}</td>
               </tr>
             </table>
 
             <div style="margin-top: 24px; padding: 16px; background: #FAF8F5; border-left: 4px solid #C5A059; border-radius: 4px;">
-              <p style="margin: 0 0 6px; font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 1px;"><strong>Client Message / Vision:</strong></p>
+              <p style="margin: 0 0 6px; font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 1px;"><strong>Client Message / Notes:</strong></p>
               <p style="margin: 0; font-size: 14px; color: #222; line-height: 1.6; white-space: pre-line;">${message || "No special message provided."}</p>
             </div>
 
             <div style="margin-top: 28px; text-align: center;">
               <a href="https://wa.me/91${phone.replace(/\D/g, "")}" style="display: inline-block; background: #1F8246; color: #ffffff; padding: 12px 24px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 14px; letter-spacing: 1px;">
-                Reply Directly on WhatsApp
+                Reply to Client on WhatsApp
               </a>
             </div>
           </div>
